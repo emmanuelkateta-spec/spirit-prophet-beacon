@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Flame, BookOpen, Users, Heart, Calendar, MapPin } from "lucide-react";
+import HeroBanner from "@/components/HeroBanner";
 import BibleStudyForm from "@/components/forms/BibleStudyForm";
 import SoulWinnerForm from "@/components/forms/SoulWinnerForm";
 import ministry1 from "@/assets/ministry-1.jpg";
@@ -23,15 +24,12 @@ export default function Ministries() {
 
   return (
     <Layout>
-      <section className="relative py-32 bg-secondary text-secondary-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-cover bg-center animate-ken-burns" style={{ backgroundImage: `url(${prophet3})` }} />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="container relative text-center">
-          <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">Ministries</span>
-          <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl mt-4 mb-6">Find Your <span className="text-gradient-gold">Place</span></h1>
-          <p className="text-lg max-w-2xl mx-auto text-white/80">There is room for every gift, every passion, every calling.</p>
-        </div>
-      </section>
+      <HeroBanner
+        variant="ministries"
+        eyebrow="Ministries"
+        title={<>Find Your <span className="text-gradient-gold">Place</span></>}
+        caption="There is room for every gift, every passion, every calling."
+      />
 
       {/* Mentorship */}
       <section id="mentorship" className="py-24 container scroll-mt-24">

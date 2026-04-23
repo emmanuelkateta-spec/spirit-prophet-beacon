@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Flame, Eye, Target, Heart } from "lucide-react";
+import HeroBanner from "@/components/HeroBanner";
 import prophet1 from "@/assets/prophet-1.jpg";
 import prophet2 from "@/assets/prophet-2.jpg";
 import prophet4 from "@/assets/prophet-4.jpg";
@@ -9,15 +10,12 @@ export default function About() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative py-32 bg-secondary text-secondary-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-cover bg-center animate-ken-burns" style={{ backgroundImage: `url(${prophet4})` }} />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="container relative text-center">
-          <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">About Us</span>
-          <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl mt-4 mb-6">A People Set <span className="text-gradient-gold">Ablaze</span></h1>
-          <p className="text-lg max-w-2xl mx-auto text-white/80">The story, the vision and the heartbeat of Spirit Filled Ministry.</p>
-        </div>
-      </section>
+      <HeroBanner
+        variant="about"
+        eyebrow="About Us"
+        title={<>A People Set <span className="text-gradient-gold">Ablaze</span></>}
+        caption="The story, the vision and the heartbeat of Spirit Filled Ministry."
+      />
 
       {/* Story */}
       <section className="py-24 container">

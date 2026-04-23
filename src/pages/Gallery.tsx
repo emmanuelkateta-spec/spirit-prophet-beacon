@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Calendar, Archive } from "lucide-react";
+import HeroBanner from "@/components/HeroBanner";
 import p1 from "@/assets/prophet-1.jpg";
 import p2 from "@/assets/prophet-2.jpg";
 import p3 from "@/assets/prophet-3.jpg";
@@ -32,15 +33,12 @@ const archives = [
 export default function Gallery() {
   return (
     <Layout>
-      <section className="relative py-32 bg-secondary text-secondary-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-cover bg-center animate-ken-burns" style={{ backgroundImage: `url(${w2})` }} />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="container relative text-center">
-          <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">Gallery & Archives</span>
-          <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl mt-4 mb-6">Captured <span className="text-gradient-gold">Moments</span></h1>
-          <p className="text-lg max-w-2xl mx-auto text-white/80">Memories from our gatherings, services and encounters with the Holy Ghost.</p>
-        </div>
-      </section>
+      <HeroBanner
+        variant="gallery"
+        eyebrow="Gallery & Archives"
+        title={<>Captured <span className="text-gradient-gold">Moments</span></>}
+        caption="Memories from our gatherings, services and encounters with the Holy Ghost."
+      />
 
       {/* Gallery grid */}
       <section className="py-24 container">
