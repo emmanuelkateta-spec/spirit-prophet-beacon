@@ -20,7 +20,18 @@ const Index = () => {
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center gap-12 px-6">
-              {["“Not by might, nor by power, but by My Spirit” — Zech 4:6", "Spirit • Truth • Power", "Premier Prophet Epas", "Holy Ghost & Fire", "One Family in Christ", "Healing • Deliverance • Breakthrough"].map((t) => (
+              {[
+                "“Not by might, nor by power, but by My Spirit” — Zechariah 4:6",
+                "“The Spirit of the Lord is upon me” — Luke 4:18",
+                "“You shall receive power when the Holy Spirit comes upon you” — Acts 1:8",
+                "“Where the Spirit of the Lord is, there is liberty” — 2 Corinthians 3:17",
+                "“Be filled with the Spirit” — Ephesians 5:18",
+                "Spirit • Truth • Power",
+                "Premier Prophet Epas",
+                "Holy Ghost & Fire",
+                "One Family in Christ",
+                "Healing • Deliverance • Breakthrough",
+              ].map((t) => (
                 <span key={t} className="flex items-center gap-12 text-sm font-semibold tracking-widest uppercase">
                   <Flame className="w-4 h-4" /> {t}
                 </span>
