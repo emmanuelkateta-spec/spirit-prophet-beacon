@@ -25,7 +25,7 @@ export default function PartnerForm() {
     const parsed = schema.safeParse(data);
     if (!parsed.success) { toast.error(parsed.error.issues[0].message); return; }
     setLoading(true);
-    const { error } = await supabase.from("partners").insert([parsed.data]);
+    const { error } = await supabase.from("partners").insert([parsed.data as any]);
     setLoading(false);
     if (error) { toast.error("Could not submit. Try again."); return; }
     setDone(true);
