@@ -121,6 +121,7 @@ export default {
         "flame-flicker": "flame-flicker 3s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
         "marquee": "marquee 40s linear infinite",
+        "pillar-float": "flame-flicker 4s ease-in-out infinite",
       },
     },
   },
