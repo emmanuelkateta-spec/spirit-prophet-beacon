@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users } from "lucide-react";
+import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users, Landmark, Globe, CreditCard, Mail } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
 import MembershipForm from "@/components/forms/MembershipForm";
 import PartnerForm from "@/components/forms/PartnerForm";
