@@ -116,11 +116,11 @@ export default {
         },
         "spin-3d": {
           "0%": { transform: "perspective(1200px) rotateY(0deg)" },
-          "100%": { transform: "perspective(1200px) rotateY(360deg)" },
+          "70%, 100%": { transform: "perspective(1200px) rotateY(360deg)" },
         },
         "spin-tilt": {
           "0%": { transform: "perspective(1200px) rotateY(0deg) rotateX(6deg)" },
-          "100%": { transform: "perspective(1200px) rotateY(360deg) rotateX(6deg)" },
+          "70%, 100%": { transform: "perspective(1200px) rotateY(360deg) rotateX(6deg)" },
         },
       },
       animation: {
@@ -134,7 +134,7 @@ export default {
         "shimmer": "shimmer 3s linear infinite",
         "marquee": "marquee 28s linear infinite",
         "float-y": "float-y 5s ease-in-out infinite",
-        "spin-3d": "spin-3d 14s linear infinite",
+        "spin-3d": "spin-3d 16s linear infinite",
         "spin-tilt": "spin-tilt 16s linear infinite",
       },
     },
