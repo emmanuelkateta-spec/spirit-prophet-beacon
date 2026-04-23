@@ -45,7 +45,7 @@ export default function MembershipForm() {
     const parsed = schema.safeParse(data);
     if (!parsed.success) { toast.error(parsed.error.issues[0].message); return; }
     setLoading(true);
-    const { error } = await supabase.from("memberships").insert(parsed.data);
+    const { error } = await supabase.from("memberships").insert([parsed.data]);
     setLoading(false);
     if (error) { toast.error("Could not register. Please try again."); return; }
     setDone(true);
