@@ -14,7 +14,141 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bible_study_registrations: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          level: string | null
+          message: string | null
+          phone: string
+          preferred_day: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          level?: string | null
+          message?: string | null
+          phone: string
+          preferred_day?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          level?: string | null
+          message?: string | null
+          phone?: string
+          preferred_day?: string | null
+        }
+        Relationships: []
+      }
+      memberships: {
+        Row: {
+          address: string | null
+          age_group: string | null
+          created_at: string
+          email: string
+          full_name: string
+          how_heard: string | null
+          id: string
+          phone: string
+        }
+        Insert: {
+          address?: string | null
+          age_group?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          how_heard?: string | null
+          id?: string
+          phone: string
+        }
+        Update: {
+          address?: string | null
+          age_group?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          how_heard?: string | null
+          id?: string
+          phone?: string
+        }
+        Relationships: []
+      }
+      partners: {
+        Row: {
+          country: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          message: string | null
+          monthly_pledge: string | null
+          partnership_type: string | null
+          phone: string
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          message?: string | null
+          monthly_pledge?: string | null
+          partnership_type?: string | null
+          phone: string
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          message?: string | null
+          monthly_pledge?: string | null
+          partnership_type?: string | null
+          phone?: string
+        }
+        Relationships: []
+      }
+      soul_winners: {
+        Row: {
+          availability: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          location: string | null
+          phone: string
+          why_join: string | null
+        }
+        Insert: {
+          availability?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          location?: string | null
+          phone: string
+          why_join?: string | null
+        }
+        Update: {
+          availability?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          location?: string | null
+          phone?: string
+          why_join?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
