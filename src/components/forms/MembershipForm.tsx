@@ -15,14 +15,14 @@ const schema = z.object({
 
 export function Input({ label, className = "", ...props }: any) {
   return <label className={`block ${className}`}>
-    <span className="text-xs font-bold uppercase tracking-widest text-foreground/70 mb-1.5 block">{label}</span>
-    <input {...props} className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all" />
+    <span className="text-xs font-bold uppercase tracking-widest opacity-80 mb-1.5 block">{label}</span>
+    <input {...props} className="w-full px-4 py-3 rounded-lg bg-background text-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all placeholder:text-muted-foreground" />
   </label>;
 }
 export function Select({ label, options, className = "", ...props }: any) {
   return <label className={`block ${className}`}>
-    <span className="text-xs font-bold uppercase tracking-widest text-foreground/70 mb-1.5 block">{label}</span>
-    <select {...props} className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+    <span className="text-xs font-bold uppercase tracking-widest opacity-80 mb-1.5 block">{label}</span>
+    <select {...props} className="w-full px-4 py-3 rounded-lg bg-background text-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all">
       <option value="">Select...</option>
       {options.map((o: string) => <option key={o} value={o}>{o}</option>)}
     </select>
@@ -30,8 +30,8 @@ export function Select({ label, options, className = "", ...props }: any) {
 }
 export function Textarea({ label, className = "", ...props }: any) {
   return <label className={`block ${className}`}>
-    <span className="text-xs font-bold uppercase tracking-widest text-foreground/70 mb-1.5 block">{label}</span>
-    <textarea rows={4} {...props} className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none" />
+    <span className="text-xs font-bold uppercase tracking-widest opacity-80 mb-1.5 block">{label}</span>
+    <textarea rows={4} {...props} className="w-full px-4 py-3 rounded-lg bg-background text-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none placeholder:text-muted-foreground" />
   </label>;
 }
 
