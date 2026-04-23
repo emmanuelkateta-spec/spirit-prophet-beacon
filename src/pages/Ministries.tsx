@@ -107,17 +107,27 @@ export default function Ministries() {
               { img: prophet1, title: "Holy Ghost Encounter", subtitle: "A Night of Fire & Prophecy" },
               { img: worship2, title: "City Fellowship Crusade", subtitle: "Healing & Salvation Outreach" },
               { img: prophet3, title: "Spirit Filled Convention", subtitle: "Days of Impartation" },
-            ].map((c) => (
-              <div key={c.title} className="group rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-accent/50 transition-all">
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img src={c.img} alt={c.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-4 left-4 bg-gradient-flame text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-flame">UPCOMING</div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display font-bold text-xl mb-1">{c.title}</h3>
-                  <p className="text-sm text-secondary-foreground/70">{c.subtitle}</p>
-                  <div className="flex items-center gap-2 mt-4 text-xs uppercase tracking-widest text-accent font-bold">
-                    <MapPin className="w-3 h-3" /> Details Soon
+            ].map((c, i) => (
+              <div
+                key={c.title}
+                className="group animate-float-y"
+                style={{ animationDelay: `${i * 0.6}s`, perspective: "1200px" }}
+              >
+                <div
+                  className="rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-accent/50 transition-all animate-spin-tilt [transform-style:preserve-3d] shadow-elegant"
+                  style={{ animationDelay: `${i * 1.2}s` }}
+                >
+                  <div className="aspect-[4/3] overflow-hidden relative [backface-visibility:hidden]">
+                    <img src={c.img} alt={c.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/20 to-transparent" />
+                    <div className="absolute top-4 left-4 bg-gradient-flame text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-flame">UPCOMING</div>
+                  </div>
+                  <div className="p-6 [backface-visibility:hidden]">
+                    <h3 className="font-display font-bold text-xl mb-1">{c.title}</h3>
+                    <p className="text-sm text-secondary-foreground/70">{c.subtitle}</p>
+                    <div className="flex items-center gap-2 mt-4 text-xs uppercase tracking-widest text-accent font-bold">
+                      <MapPin className="w-3 h-3" /> Details Soon
+                    </div>
                   </div>
                 </div>
               </div>

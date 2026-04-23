@@ -110,6 +110,18 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "float-y": {
+          "0%, 100%": { transform: "translateY(-12px)" },
+          "50%": { transform: "translateY(12px)" },
+        },
+        "spin-3d": {
+          "0%": { transform: "perspective(1200px) rotateY(0deg)" },
+          "100%": { transform: "perspective(1200px) rotateY(360deg)" },
+        },
+        "spin-tilt": {
+          "0%": { transform: "perspective(1200px) rotateY(0deg) rotateX(6deg)" },
+          "100%": { transform: "perspective(1200px) rotateY(360deg) rotateX(6deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -121,6 +133,9 @@ export default {
         "flame-flicker": "flame-flicker 3s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
         "marquee": "marquee 28s linear infinite",
+        "float-y": "float-y 5s ease-in-out infinite",
+        "spin-3d": "spin-3d 14s linear infinite",
+        "spin-tilt": "spin-tilt 16s linear infinite",
       },
     },
   },
