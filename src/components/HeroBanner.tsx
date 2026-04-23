@@ -42,7 +42,7 @@ export default function HeroBanner({ variant, eyebrow, title, caption }: HeroBan
           <div
             key={idx}
             className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[1800ms] ease-in-out ${
-              idx === i ? "opacity-40 animate-ken-burns" : "opacity-0"
+              idx === i ? "opacity-70 animate-ken-burns" : "opacity-0"
             }`}
             style={{ backgroundImage: `url(${src})` }}
             aria-hidden={idx !== i}
@@ -51,8 +51,8 @@ export default function HeroBanner({ variant, eyebrow, title, caption }: HeroBan
       </div>
 
       {/* Dimensional gradient layers */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-90" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-secondary/80 via-transparent to-primary/20" />
+      <div className="absolute inset-0 bg-gradient-hero opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-secondary/50 via-transparent to-primary/10" />
 
       {/* Floating accent orbs (3D-feel parallax) */}
       <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-primary/25 blur-3xl animate-flame-flicker pointer-events-none" />

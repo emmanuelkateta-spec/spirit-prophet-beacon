@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import HeroCarousel from "@/components/HeroCarousel";
+import PillarsMotion from "@/components/PillarsMotion";
 import { Link } from "react-router-dom";
 import { Flame, BookOpen, Users, Heart, ChevronRight, Calendar, MapPin } from "lucide-react";
 import prophet1 from "@/assets/prophet-1.jpg";
@@ -20,7 +21,18 @@ const Index = () => {
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center gap-12 px-6">
-              {["“Not by might, nor by power, but by My Spirit” — Zech 4:6", "Spirit • Truth • Power", "Premier Prophet Epas", "Holy Ghost & Fire", "One Family in Christ", "Healing • Deliverance • Breakthrough"].map((t) => (
+              {[
+                "“Not by might, nor by power, but by My Spirit” — Zechariah 4:6",
+                "“The Spirit of the Lord is upon me” — Luke 4:18",
+                "“You shall receive power when the Holy Spirit comes upon you” — Acts 1:8",
+                "“Where the Spirit of the Lord is, there is liberty” — 2 Corinthians 3:17",
+                "“Be filled with the Spirit” — Ephesians 5:18",
+                "Spirit • Truth • Power",
+                "Premier Prophet Epas",
+                "Holy Ghost & Fire",
+                "One Family in Christ",
+                "Healing • Deliverance • Breakthrough",
+              ].map((t) => (
                 <span key={t} className="flex items-center gap-12 text-sm font-semibold tracking-widest uppercase">
                   <Flame className="w-4 h-4" /> {t}
                 </span>
@@ -64,7 +76,8 @@ const Index = () => {
 
       {/* Pillars */}
       <section className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-radial opacity-40" />
+        <PillarsMotion />
+        <div className="absolute inset-0 bg-gradient-radial opacity-50" />
         <div className="container relative">
           <div className="text-center mb-16">
             <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">Our Pillars</span>
@@ -77,7 +90,7 @@ const Index = () => {
               { icon: Users, title: "Family", text: "A loving community where no one walks alone." },
               { icon: Heart, title: "Compassion", text: "Reaching the lost, the broken, and the forgotten." },
             ].map((p, i) => (
-              <div key={p.title} className="group p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-primary/60 hover:-translate-y-2 transition-all duration-500" style={{ animationDelay: `${i * 100}ms` }}>
+              <div key={p.title} className="group p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:border-primary/60 hover:-translate-y-2 transition-all duration-500 animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
                 <div className="w-14 h-14 rounded-xl bg-gradient-flame flex items-center justify-center mb-5 shadow-flame group-hover:animate-flame-flicker">
                   <p.icon className="w-7 h-7 text-primary-foreground" />
                 </div>

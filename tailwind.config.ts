@@ -120,7 +120,7 @@ export default {
         "slide-fade": "slide-fade 8s ease-in-out infinite",
         "flame-flicker": "flame-flicker 3s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
-        "marquee": "marquee 40s linear infinite",
+        "marquee": "marquee 28s linear infinite",
       },
     },
   },
