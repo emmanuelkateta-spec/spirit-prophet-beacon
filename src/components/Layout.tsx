@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Flame, Phone, Facebook, Instagram, Youtube } from "lucide-react";
+import { Menu, X, Flame, Phone, Facebook, Instagram, Youtube, MessageCircle, MessageSquare } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const nav = [
@@ -96,6 +96,36 @@ export default function Layout({ children }: { children: ReactNode }) {
       </header>
 
       <main className="flex-1" key={loc.pathname}>{children}</main>
+
+      {/* Floating contact buttons */}
+      <div className="fixed right-4 bottom-6 z-50 flex flex-col gap-3">
+        <a
+          href="sms:+260976747922"
+          aria-label="Send SMS"
+          className="group w-12 h-12 rounded-full bg-gradient-flame text-primary-foreground shadow-flame flex items-center justify-center hover:scale-110 transition-transform"
+        >
+          <MessageSquare className="w-5 h-5" />
+          <span className="absolute right-full mr-3 px-3 py-1 rounded-md bg-secondary text-secondary-foreground text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Message</span>
+        </a>
+        <a
+          href="https://wa.me/260976747922"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="group w-12 h-12 rounded-full bg-[#25D366] text-white shadow-elegant flex items-center justify-center hover:scale-110 transition-transform"
+        >
+          <MessageCircle className="w-5 h-5" />
+          <span className="absolute right-full mr-3 px-3 py-1 rounded-md bg-secondary text-secondary-foreground text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">WhatsApp</span>
+        </a>
+        <a
+          href="tel:+260976747922"
+          aria-label="Call us"
+          className="group w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-flame flex items-center justify-center hover:scale-110 transition-transform animate-flame-flicker"
+        >
+          <Phone className="w-5 h-5" />
+          <span className="absolute right-full mr-3 px-3 py-1 rounded-md bg-secondary text-secondary-foreground text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Call Now</span>
+        </a>
+      </div>
 
       {/* Footer */}
       <footer className="bg-secondary text-secondary-foreground mt-20">
