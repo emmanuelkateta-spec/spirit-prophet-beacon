@@ -122,6 +122,18 @@ export default {
           "0%": { transform: "perspective(1200px) rotateY(0deg) rotateX(6deg)" },
           "70%, 100%": { transform: "perspective(1200px) rotateY(360deg) rotateX(6deg)" },
         },
+        "logo-blink": {
+          "0%, 100%": {
+            opacity: "1",
+            filter: "drop-shadow(0 0 18px hsl(var(--primary) / 0.85)) drop-shadow(0 0 36px hsl(var(--accent) / 0.6))",
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: "0.55",
+            filter: "drop-shadow(0 0 4px hsl(var(--primary) / 0.2))",
+            transform: "scale(0.96)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -136,6 +148,7 @@ export default {
         "float-y": "float-y 5s ease-in-out infinite",
         "spin-3d": "spin-3d 16s linear infinite",
         "spin-tilt": "spin-tilt 16s linear infinite",
+        "logo-blink": "logo-blink 1.6s ease-in-out infinite",
       },
     },
   },
