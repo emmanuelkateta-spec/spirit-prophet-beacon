@@ -38,7 +38,7 @@ const Index = () => {
             <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-gradient-flame text-primary-foreground p-6 rounded-xl shadow-flame max-w-[220px]">
               <Flame className="w-8 h-8 mb-2 animate-flame-flicker" />
               <div className="font-display font-bold text-lg leading-tight">Premier Prophet Epas</div>
-              <div className="text-xs uppercase tracking-widest opacity-90 mt-1">Lead Servant</div>
+              <div className="text-xs uppercase tracking-widest opacity-90 mt-1">Founder and President</div>
             </div>
           </div>
           <div>
@@ -50,7 +50,7 @@ const Index = () => {
               A House on <span className="text-gradient-flame">Fire</span> for God
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Spirit Filled Ministry is a Holy Ghost movement raising a generation that knows their God and walks in supernatural power. Under the apostolic and prophetic leadership of <strong className="text-foreground">Premier Prophet Epas</strong>, we are committed to seeing souls saved, lives transformed, and the Kingdom of God advanced.
+              Spirit Filled Ministry is a Holy Ghost movement raising a generation that knows their God and walks in supernatural power. Under the prophetic leadership of <strong className="text-foreground">Premier Prophet Epas</strong>, we are committed to seeing souls saved, lives transformed, and the Kingdom of God advanced.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Whether you are seeking healing, hungry for the Word, or ready to discover your purpose — there is a place for you here.
