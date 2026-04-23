@@ -1,0 +1,164 @@
+import Layout from "@/components/Layout";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users } from "lucide-react";
+import MembershipForm from "@/components/forms/MembershipForm";
+import PartnerForm from "@/components/forms/PartnerForm";
+import { toast } from "sonner";
+import worship2 from "@/assets/worship-2.jpg";
+
+const givingTypes = [
+  { icon: HandCoins, title: "Tithes", text: "Honour the Lord with the firstfruits of all your increase. Bring the whole tithe into the storehouse." },
+  { icon: Gift, title: "Offerings", text: "A freewill expression of love and thanksgiving — given as the Lord lays on your heart." },
+  { icon: Sprout, title: "Seeds", text: "Sow into the work of the Kingdom and expect a harvest of blessing in due season." },
+  { icon: Heart, title: "Charity Foundation", text: "Support the Spirit Filled Charity Foundation reaching the poor, widows and orphans." },
+];
+
+export default function Connect() {
+  const loc = useLocation();
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (loc.hash) document.querySelector(loc.hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [loc]);
+
+  function copy(num: string) {
+    navigator.clipboard.writeText(num);
+    setCopied(true);
+    toast.success("Number copied to clipboard");
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  return (
+    <Layout>
+      <section className="relative py-32 bg-secondary text-secondary-foreground overflow-hidden">
+        <div className="absolute inset-0 opacity-30 bg-cover bg-center animate-ken-burns" style={{ backgroundImage: `url(${worship2})` }} />
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="container relative text-center">
+          <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">Give & Connect</span>
+          <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl mt-4 mb-6">Take the <span className="text-gradient-gold">Next Step</span></h1>
+          <p className="text-lg max-w-2xl mx-auto text-white/80">Become a member, partner with the vision, or sow into the work of God.</p>
+        </div>
+      </section>
+
+      {/* Quick contact bar */}
+      <section className="py-10 bg-gradient-flame text-primary-foreground">
+        <div className="container grid sm:grid-cols-2 gap-6">
+          <a href="tel:+260976747922" className="flex items-center gap-4 group">
+            <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+              <Phone className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-widest opacity-80">Church Inquiries</div>
+              <div className="font-display font-bold text-2xl">+260 976 747 922</div>
+            </div>
+          </a>
+          <button onClick={() => copy("0973516896")} className="flex items-center gap-4 text-left group">
+            <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+              <Smartphone className="w-6 h-6" />
+            </div>
+            <div className="flex-1">
+              <div className="text-xs uppercase tracking-widest opacity-80">Airtel Money — Givings</div>
+              <div className="font-display font-bold text-2xl flex items-center gap-3">0973 516 896 {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5 opacity-60" />}</div>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      {/* Membership */}
+      <section id="membership" className="py-24 container scroll-mt-24">
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-3">
+              <Users className="w-5 h-5 text-primary" />
+              <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Membership</span>
+            </div>
+            <h2 className="font-display font-black text-4xl sm:text-5xl mb-6">Become a <span className="text-gradient-flame">Member</span></h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">You weren't created to walk alone. Plant your roots in a Spirit-filled family that prays for you, contends for you, and watches you flourish.</p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>• Pastoral covering</li>
+              <li>• Discipleship & mentorship</li>
+              <li>• Service opportunities</li>
+              <li>• Weekly fellowship</li>
+            </ul>
+          </div>
+          <div className="lg:col-span-3 bg-muted p-8 rounded-2xl shadow-elegant">
+            <h3 className="font-display font-bold text-2xl mb-6">Membership Registration</h3>
+            <MembershipForm />
+          </div>
+        </div>
+      </section>
+
+      {/* Partner */}
+      <section id="partner" className="py-24 bg-muted scroll-mt-24">
+        <div className="container grid lg:grid-cols-5 gap-12 items-start">
+          <div className="lg:col-span-3 bg-background p-8 rounded-2xl shadow-elegant order-2 lg:order-1">
+            <h3 className="font-display font-bold text-2xl mb-6">Ministry Partner Registration</h3>
+            <PartnerForm />
+          </div>
+          <div className="lg:col-span-2 order-1 lg:order-2">
+            <div className="flex items-center gap-3 mb-3">
+              <Heart className="w-5 h-5 text-primary" />
+              <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Ministry Partnership</span>
+            </div>
+            <h2 className="font-display font-black text-4xl sm:text-5xl mb-6">Stand With <span className="text-gradient-flame">the Vision</span></h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">Become a Ministry Partner and stand alongside Premier Prophet Epas in advancing the gospel — through prayer, giving and intentional support of the work.</p>
+            <p className="text-muted-foreground">Together we are reaching nations.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Giving */}
+      <section id="give" className="py-24 container scroll-mt-24">
+        <div className="text-center mb-14">
+          <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Giving</span>
+          <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl mt-3 mb-4">Sow into <span className="text-gradient-flame">Eternity</span></h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">"Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver." — 2 Cor 9:7</p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+          {givingTypes.map((g) => (
+            <div key={g.title} className="group p-7 rounded-2xl border-2 border-border hover:border-primary bg-card shadow-elegant hover:-translate-y-1 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-gradient-flame flex items-center justify-center mb-4 shadow-flame group-hover:animate-flame-flicker">
+                <g.icon className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="font-display font-bold text-xl mb-2">{g.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{g.text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* How to Give */}
+        <div className="bg-secondary text-secondary-foreground rounded-3xl p-10 lg:p-14 shadow-elegant relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-radial opacity-30 pointer-events-none" />
+          <div className="relative">
+            <h3 className="font-display font-black text-3xl sm:text-4xl mb-8 text-center">How to Give via <span className="text-gradient-gold">Airtel Money</span></h3>
+            <ol className="grid md:grid-cols-3 gap-6 mb-10">
+              {[
+                { n: "1", title: "Dial *115#", text: "Open Airtel Money on your phone." },
+                { n: "2", title: "Send Money", text: "To 0973 516 896 — Spirit Filled Ministry." },
+                { n: "3", title: "Use Reference", text: "Enter Tithe / Offering / Seed / Charity." },
+              ].map((s) => (
+                <li key={s.n} className="bg-white/5 border border-white/10 rounded-2xl p-6">
+                  <div className="w-10 h-10 rounded-full bg-gradient-flame flex items-center justify-center font-display font-black mb-4 shadow-flame">{s.n}</div>
+                  <h4 className="font-display font-bold text-lg mb-1">{s.title}</h4>
+                  <p className="text-sm text-secondary-foreground/70">{s.text}</p>
+                </li>
+              ))}
+            </ol>
+
+            <div className="bg-gradient-flame rounded-2xl p-8 text-center text-primary-foreground shadow-flame">
+              <div className="text-xs uppercase tracking-[0.4em] opacity-90 mb-2">Airtel Money Number</div>
+              <div className="font-display font-black text-4xl sm:text-5xl mb-4">0973 516 896</div>
+              <button onClick={() => copy("0973516896")} className="bg-white text-primary px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs inline-flex items-center gap-2 hover:scale-105 transition-transform">
+                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />} {copied ? "Copied" : "Copy Number"}
+              </button>
+            </div>
+
+            <p className="text-center text-sm text-secondary-foreground/70 mt-6">For inquiries about your giving, call <a href="tel:+260976747922" className="text-accent font-bold">+260 976 747 922</a></p>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}
