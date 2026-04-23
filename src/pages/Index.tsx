@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import HeroCarousel from "@/components/HeroCarousel";
+import PillarsMotion from "@/components/PillarsMotion";
 import { Link } from "react-router-dom";
 import { Flame, BookOpen, Users, Heart, ChevronRight, Calendar, MapPin } from "lucide-react";
 import prophet1 from "@/assets/prophet-1.jpg";
