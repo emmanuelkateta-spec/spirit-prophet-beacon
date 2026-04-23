@@ -45,7 +45,7 @@ export default function Ministries() {
             <h2 className="font-display font-black text-4xl sm:text-5xl mb-6">Be Discipled. Be <span className="text-gradient-flame">Equipped</span>. Be Sent.</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">Our Mentorship Program pairs you with seasoned ministers who walk with you in prayer, the Word, character formation and ministry training. Whether you're called to lead, serve, preach or pioneer — we'll help you grow.</p>
             <ul className="space-y-3">
-              {["Personal one-on-one sessions", "Quarterly leadership intensives", "Apostolic & prophetic impartation", "Practical ministry exposure"].map((t) => (
+              {["Personal one-on-one sessions", "Quarterly leadership intensives", "Prophetic impartation", "Practical ministry exposure"].map((t) => (
                 <li key={t} className="flex items-start gap-3"><Flame className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" /><span>{t}</span></li>
               ))}
             </ul>

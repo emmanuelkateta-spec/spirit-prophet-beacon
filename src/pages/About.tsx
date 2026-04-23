@@ -28,7 +28,7 @@ export default function About() {
             <h2 className="font-display font-black text-4xl sm:text-5xl mt-3 mb-6">From a Spark to a <span className="text-gradient-flame">Wildfire</span></h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>Spirit Filled Ministry was birthed out of a divine burden — to see the Body of Christ return to the simplicity, purity and power of the early Church. What began as small gatherings of hungry believers has grown into a thriving community where the Word of God is preached uncompromisingly and the Holy Spirit moves freely.</p>
-              <p>At the helm is <strong className="text-foreground">Premier Prophet Epas</strong>, a vessel called and commissioned by God to release prophetic insight, healing, and apostolic order. His ministry has been a source of restoration to many, raising up a generation that walks in supernatural identity.</p>
+              <p>At the helm is <strong className="text-foreground">Premier Prophet Epas</strong>, a vessel called and commissioned by God to release prophetic insight, healing, and divine order. His ministry has been a source of restoration to many, raising up a generation that walks in supernatural identity.</p>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function About() {
       <section className="py-24 container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Lead Servant</span>
+            <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Founder and President</span>
             <h2 className="font-display font-black text-4xl sm:text-5xl mt-3 mb-6">Premier Prophet <span className="text-gradient-flame">Epas</span></h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>A prophet, teacher and father in the faith, Premier Prophet Epas carries a unique mantle of prophetic accuracy, healing and impartation. His passion is to see believers rooted in the Word and walking in the demonstration of the Spirit.</p>
