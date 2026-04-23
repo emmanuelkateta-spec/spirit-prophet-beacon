@@ -2,10 +2,10 @@ import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users } from "lucide-react";
+import HeroBanner from "@/components/HeroBanner";
 import MembershipForm from "@/components/forms/MembershipForm";
 import PartnerForm from "@/components/forms/PartnerForm";
 import { toast } from "sonner";
-import worship2 from "@/assets/worship-2.jpg";
 
 const givingTypes = [
   { icon: HandCoins, title: "Tithes", text: "Honour the Lord with the firstfruits of all your increase. Bring the whole tithe into the storehouse." },
@@ -31,15 +31,12 @@ export default function Connect() {
 
   return (
     <Layout>
-      <section className="relative py-32 bg-secondary text-secondary-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-cover bg-center animate-ken-burns" style={{ backgroundImage: `url(${worship2})` }} />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="container relative text-center">
-          <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">Give & Connect</span>
-          <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl mt-4 mb-6">Take the <span className="text-gradient-gold">Next Step</span></h1>
-          <p className="text-lg max-w-2xl mx-auto text-white/80">Become a member, partner with the vision, or sow into the work of God.</p>
-        </div>
-      </section>
+      <HeroBanner
+        variant="connect"
+        eyebrow="Give & Connect"
+        title={<>Take the <span className="text-gradient-gold">Next Step</span></>}
+        caption="Become a member, partner with the vision, or sow into the work of God."
+      />
 
       {/* Quick contact bar */}
       <section className="py-10 bg-gradient-flame text-primary-foreground">
