@@ -10,6 +10,7 @@ import About from "./pages/About.tsx";
 import Ministries from "./pages/Ministries.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Connect from "./pages/Connect.tsx";
+import Sermons from "./pages/Sermons.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/ministries" element={<Ministries />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/connect" element={<Connect />} />
+          <Route path="/sermons" element={<Sermons />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
