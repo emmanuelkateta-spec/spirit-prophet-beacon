@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users } from "lucide-react";
+import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users, Landmark, Globe, CreditCard, Mail } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
 import MembershipForm from "@/components/forms/MembershipForm";
 import PartnerForm from "@/components/forms/PartnerForm";
@@ -154,6 +154,84 @@ export default function Connect() {
 
             <p className="text-center text-sm text-secondary-foreground/70 mt-6">For inquiries about your giving, call <a href="tel:+260976747922" className="text-accent font-bold">+260 976 747 922</a></p>
           </div>
+        </div>
+
+        {/* Other Ways to Give */}
+        <div className="mt-16">
+          <div className="text-center mb-10">
+            <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">More Options</span>
+            <h3 className="font-display font-black text-3xl sm:text-4xl mt-3">Other Ways to <span className="text-gradient-flame">Give</span></h3>
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">Whether you give from across town or across the world, we've made it simple to sow into the Kingdom.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* PayPal */}
+            <div className="p-7 rounded-2xl border-2 border-border hover:border-primary bg-card shadow-elegant transition-all">
+              <div className="w-12 h-12 rounded-xl bg-gradient-flame flex items-center justify-center mb-4 shadow-flame">
+                <Globe className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h4 className="font-display font-bold text-xl mb-2">PayPal</h4>
+              <p className="text-sm text-muted-foreground mb-4">Give securely from anywhere in the world in your local currency.</p>
+              <div className="bg-muted rounded-lg p-3 flex items-center justify-between gap-2">
+                <div className="text-sm">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">PayPal Email</div>
+                  <div className="font-bold break-all">giving@spiritfilled.org</div>
+                </div>
+                <button onClick={() => copy("giving@spiritfilled.org")} className="text-primary hover:scale-110 transition-transform shrink-0">
+                  <Copy className="w-4 h-4" />
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3 flex items-center gap-2"><Mail className="w-3 h-3" /> Use Friends & Family where possible</p>
+            </div>
+
+            {/* Bank Transfer */}
+            <div className="p-7 rounded-2xl border-2 border-border hover:border-primary bg-card shadow-elegant transition-all">
+              <div className="w-12 h-12 rounded-xl bg-gradient-flame flex items-center justify-center mb-4 shadow-flame">
+                <Landmark className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h4 className="font-display font-bold text-xl mb-2">Bank Transfer</h4>
+              <p className="text-sm text-muted-foreground mb-4">Direct deposit into our church bank account.</p>
+              <ul className="text-sm space-y-1.5">
+                <li><span className="text-muted-foreground">Bank:</span> <span className="font-bold">Zanaco</span></li>
+                <li><span className="text-muted-foreground">Account Name:</span> <span className="font-bold">Spirit Filled Ministry</span></li>
+                <li className="flex items-center gap-2">
+                  <span className="text-muted-foreground">Account No:</span>
+                  <span className="font-bold">0123456789</span>
+                  <button onClick={() => copy("0123456789")} className="text-primary hover:scale-110 transition-transform">
+                    <Copy className="w-3.5 h-3.5" />
+                  </button>
+                </li>
+                <li><span className="text-muted-foreground">Branch:</span> <span className="font-bold">Lusaka Main</span></li>
+                <li><span className="text-muted-foreground">SWIFT:</span> <span className="font-bold">ZNCOZMLU</span></li>
+              </ul>
+            </div>
+
+            {/* Other Mobile / Card */}
+            <div className="p-7 rounded-2xl border-2 border-border hover:border-primary bg-card shadow-elegant transition-all">
+              <div className="w-12 h-12 rounded-xl bg-gradient-flame flex items-center justify-center mb-4 shadow-flame">
+                <CreditCard className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h4 className="font-display font-bold text-xl mb-2">Other Payment Modes</h4>
+              <p className="text-sm text-muted-foreground mb-4">We also accept the following giving channels:</p>
+              <ul className="text-sm space-y-2">
+                <li className="flex items-center justify-between gap-2">
+                  <span><span className="font-bold">MTN Mobile Money:</span> 0961 000 000</span>
+                  <button onClick={() => copy("0961000000")} className="text-primary hover:scale-110 transition-transform"><Copy className="w-3.5 h-3.5" /></button>
+                </li>
+                <li className="flex items-center justify-between gap-2">
+                  <span><span className="font-bold">Zamtel Kwacha:</span> 0951 000 000</span>
+                  <button onClick={() => copy("0951000000")} className="text-primary hover:scale-110 transition-transform"><Copy className="w-3.5 h-3.5" /></button>
+                </li>
+                <li><span className="font-bold">Western Union / MoneyGram:</span> Contact us for details</li>
+                <li><span className="font-bold">Cash / Cheque:</span> In person at any service</li>
+              </ul>
+              <a href="mailto:giving@spiritfilled.org" className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-bold hover:underline">
+                <Mail className="w-4 h-4" /> Request another method
+              </a>
+            </div>
+          </div>
+
+          <p className="text-center text-xs text-muted-foreground mt-8 max-w-2xl mx-auto">After giving via PayPal or bank transfer, kindly email <a href="mailto:giving@spiritfilled.org" className="text-primary font-bold">giving@spiritfilled.org</a> with your name and reference (Tithe / Offering / Seed / Charity) so we can issue a confirmation.</p>
         </div>
       </section>
     </Layout>
