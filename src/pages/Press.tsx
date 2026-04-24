@@ -47,11 +47,40 @@ export default function Press() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-2xl bg-secondary text-secondary-foreground p-10 text-center">
-          <Camera className="w-10 h-10 mx-auto text-accent mb-4" />
-          <h3 className="font-display font-black text-2xl sm:text-3xl">Media Inquiries</h3>
-          <p className="text-secondary-foreground/80 mt-2 max-w-xl mx-auto">For interviews, press passes, and official statements from Spirit Filled Ministry.</p>
-          <a href="mailto:press@spiritfilled.org" className="inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform">Contact Press Team</a>
+        <div className="mt-16 relative overflow-hidden rounded-2xl bg-secondary text-secondary-foreground p-10 text-center animate-camera-shake">
+          {/* Full-frame white flash */}
+          <div className="pointer-events-none absolute inset-0 bg-white animate-camera-flash mix-blend-screen" aria-hidden />
+
+          {/* Shutter blink bars */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-black/90 origin-top animate-shutter-blink" aria-hidden />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-black/90 origin-bottom animate-shutter-blink" aria-hidden />
+
+          {/* Scattered flash bursts (paparazzi) */}
+          <div className="pointer-events-none absolute inset-0" aria-hidden>
+            <span className="absolute top-6 left-8 w-24 h-24 rounded-full bg-white blur-2xl animate-flash-burst" style={{ animationDelay: "0.4s" }} />
+            <span className="absolute top-10 right-10 w-20 h-20 rounded-full bg-accent/80 blur-2xl animate-flash-burst" style={{ animationDelay: "1.2s" }} />
+            <span className="absolute bottom-8 left-1/4 w-28 h-28 rounded-full bg-white blur-3xl animate-flash-burst" style={{ animationDelay: "2.0s" }} />
+            <span className="absolute bottom-10 right-1/4 w-20 h-20 rounded-full bg-primary/70 blur-2xl animate-flash-burst" style={{ animationDelay: "2.8s" }} />
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-white blur-3xl animate-flash-burst" style={{ animationDelay: "3.4s" }} />
+          </div>
+
+          {/* Viewfinder corner brackets */}
+          <div className="pointer-events-none absolute inset-4" aria-hidden>
+            <span className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-accent/70" />
+            <span className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-accent/70" />
+            <span className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-accent/70" />
+            <span className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-accent/70" />
+          </div>
+
+          <div className="relative z-10">
+            <div className="relative inline-flex items-center justify-center mb-4">
+              <span className="absolute inset-0 -m-3 rounded-full bg-white/80 blur-xl animate-flash-burst" style={{ animationDelay: "1.6s" }} aria-hidden />
+              <Camera className="relative w-10 h-10 text-accent" />
+            </div>
+            <h3 className="font-display font-black text-2xl sm:text-3xl">Media Inquiries</h3>
+            <p className="text-secondary-foreground/80 mt-2 max-w-xl mx-auto">For interviews, press passes, and official statements from Spirit Filled Ministry.</p>
+            <a href="mailto:press@spiritfilled.org" className="relative inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform">Contact Press Team</a>
+          </div>
         </div>
       </section>
     </Layout>
