@@ -32,7 +32,9 @@ export default function Podcasts() {
             { icon: Play, title: "Worship Sessions", desc: "Spirit-led worship moments captured live in our sanctuary." },
           ].map((s) => (
             <div key={s.title} className="rounded-2xl border border-border bg-card p-6 shadow-elegant hover:shadow-flame transition-shadow">
-              <s.icon className="w-8 h-8 text-primary" />
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-primary-foreground animate-heart-beat-color">
+                <s.icon className="w-7 h-7" />
+              </div>
               <h3 className="font-display font-bold text-xl mt-4">{s.title}</h3>
               <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
             </div>
@@ -43,7 +45,7 @@ export default function Podcasts() {
         <div className="rounded-2xl border border-border bg-card divide-y divide-border overflow-hidden shadow-elegant">
           {EPISODES.map((ep, i) => (
             <div key={ep.title} className="flex items-center gap-4 p-5 hover:bg-muted/40 transition-colors">
-              <button className="w-12 h-12 rounded-full bg-gradient-flame text-primary-foreground flex items-center justify-center shadow-flame shrink-0 hover:scale-105 transition-transform" aria-label={`Play ${ep.title}`}>
+              <button className="w-12 h-12 rounded-full text-primary-foreground flex items-center justify-center shrink-0 animate-heart-beat-color hover:scale-110 transition-transform" aria-label={`Play ${ep.title}`}>
                 <Play className="w-5 h-5 ml-0.5 fill-current" />
               </button>
               <img src={logo} alt="" className="w-10 h-10 rounded-full object-cover hidden sm:block ring-2 ring-primary/30" />

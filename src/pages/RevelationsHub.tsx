@@ -3,6 +3,10 @@ import HeroBanner from "@/components/HeroBanner";
 import { Lock, Key, Flame, ShieldCheck, BookOpen, Crown } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import prophet1 from "@/assets/prophet-1.jpg";
+import prophet2 from "@/assets/prophet-2.jpg";
+import prophet3 from "@/assets/prophet-3.jpg";
+import prophet4 from "@/assets/prophet-4.jpg";
 
 export default function RevelationsHub() {
   const [code, setCode] = useState("");
@@ -22,9 +26,28 @@ export default function RevelationsHub() {
         caption="A consecrated space for an inner circle — deep revelation, prophetic schooling and spiritual mantles."
       />
 
-      <section className="py-20 container">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div>
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="absolute inset-0 bg-background/85" />
+          <div className="absolute inset-0 flex items-center justify-center [perspective:1400px]">
+            <div className="relative w-[min(80vw,640px)] h-[min(80vw,640px)] [transform-style:preserve-3d] animate-prophet-orbit opacity-30">
+              {[prophet1, prophet2, prophet3, prophet4].map((src, idx) => (
+                <div
+                  key={idx}
+                  className="absolute inset-0 rounded-[3rem] bg-cover bg-center shadow-flame"
+                  style={{
+                    backgroundImage: `url(${src})`,
+                    transform: `rotateY(${idx * 90}deg) translateZ(280px)`,
+                    backfaceVisibility: "hidden",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/70" />
+        </div>
+        <div className="container grid lg:grid-cols-2 gap-12 items-start relative">
+          <div className="bg-background/70 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-border">
             <div className="flex items-center gap-3 mb-3">
               <Crown className="w-5 h-5 text-primary" />
               <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">By Invitation</span>
