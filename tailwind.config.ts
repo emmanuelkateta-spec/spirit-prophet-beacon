@@ -134,6 +134,52 @@ export default {
             transform: "scale(0.96)",
           },
         },
+        "heart-beat-color": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            backgroundColor: "hsl(var(--primary))",
+            boxShadow: "0 0 0 0 hsl(var(--primary) / 0.6), 0 8px 24px -6px hsl(var(--primary) / 0.6)",
+          },
+          "20%": {
+            transform: "scale(1.18)",
+            backgroundColor: "hsl(var(--accent))",
+            boxShadow: "0 0 0 10px hsl(var(--accent) / 0), 0 10px 30px -6px hsl(var(--accent) / 0.7)",
+          },
+          "40%": {
+            transform: "scale(0.96)",
+            backgroundColor: "hsl(var(--destructive))",
+          },
+          "60%": {
+            transform: "scale(1.12)",
+            backgroundColor: "hsl(var(--primary))",
+            boxShadow: "0 0 0 16px hsl(var(--primary) / 0), 0 12px 32px -6px hsl(var(--primary) / 0.6)",
+          },
+          "80%": {
+            transform: "scale(0.98)",
+            backgroundColor: "hsl(var(--accent))",
+          },
+        },
+        "beat-grow": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            boxShadow: "0 0 0 0 hsl(var(--primary) / 0.7), 0 10px 30px -8px hsl(var(--primary) / 0.5)",
+          },
+          "30%": {
+            transform: "scale(1.08)",
+            boxShadow: "0 0 0 12px hsl(var(--primary) / 0), 0 14px 40px -8px hsl(var(--accent) / 0.7)",
+          },
+          "60%": {
+            transform: "scale(1.14)",
+            boxShadow: "0 0 0 22px hsl(var(--accent) / 0), 0 18px 50px -10px hsl(var(--primary) / 0.6)",
+          },
+        },
+        "prophet-orbit": {
+          "0%": { transform: "perspective(1400px) rotateY(0deg)" },
+          "22%": { transform: "perspective(1400px) rotateY(180deg)" },
+          "50%": { transform: "perspective(1400px) rotateY(180deg)" },
+          "72%": { transform: "perspective(1400px) rotateY(360deg)" },
+          "100%": { transform: "perspective(1400px) rotateY(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -149,6 +195,9 @@ export default {
         "spin-3d": "spin-3d 16s linear infinite",
         "spin-tilt": "spin-tilt 16s linear infinite",
         "logo-blink": "logo-blink 1.6s ease-in-out infinite",
+        "heart-beat-color": "heart-beat-color 1.2s ease-in-out infinite",
+        "beat-grow": "beat-grow 1.4s ease-in-out infinite",
+        "prophet-orbit": "prophet-orbit 26s ease-in-out infinite",
       },
     },
   },
