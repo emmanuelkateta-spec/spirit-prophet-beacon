@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Flame, Phone, Facebook, Instagram, Youtube, MessageCircle, MessageSquare } from "lucide-react";
+import { Menu, X, Flame, Phone, Facebook, Instagram, Youtube, MessageCircle, MessageSquare, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const nav = [
@@ -12,8 +12,20 @@ const nav = [
   { to: "/connect", label: "Give & Connect" },
 ];
 
+const moreNav = [
+  { to: "/blog", label: "SFM Channel (Blog)" },
+  { to: "/press", label: "Press & Media" },
+  { to: "/podcasts", label: "Audio & Podcasts" },
+  { to: "/academy", label: "SFM Academy" },
+  { to: "/revelations-hub", label: "Revelations Hub" },
+  { to: "/global-map", label: "SFM Global Map" },
+  { to: "/testimonials", label: "Testimonials" },
+  { to: "/appointment", label: "Book Appointment" },
+];
+
 export default function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const loc = useLocation();
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -53,6 +65,38 @@ export default function Layout({ children }: { children: ReactNode }) {
                 {n.label}
               </NavLink>
             ))}
+            <div
+              className="relative"
+              onMouseEnter={() => setMoreOpen(true)}
+              onMouseLeave={() => setMoreOpen(false)}
+            >
+              <button
+                className="px-4 py-2 text-sm font-semibold uppercase tracking-wider rounded-md text-foreground/70 hover:text-primary inline-flex items-center gap-1"
+                aria-haspopup="true"
+                aria-expanded={moreOpen}
+              >
+                More <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              {moreOpen && (
+                <div className="absolute right-0 top-full pt-2 w-64 z-50">
+                  <div className="rounded-xl border border-border bg-background shadow-elegant overflow-hidden animate-fade-in">
+                    {moreNav.map((m) => (
+                      <NavLink
+                        key={m.to}
+                        to={m.to}
+                        className={({ isActive }) =>
+                          `block px-4 py-2.5 text-sm font-semibold transition-colors ${
+                            isActive ? "bg-primary/10 text-primary" : "text-foreground/80 hover:bg-muted hover:text-primary"
+                          }`
+                        }
+                      >
+                        {m.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
             <Link
               to="/connect#give"
               className="ml-3 bg-gradient-flame text-primary-foreground px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-flame hover:scale-105 transition-transform"
@@ -84,6 +128,23 @@ export default function Layout({ children }: { children: ReactNode }) {
                   {n.label}
                 </NavLink>
               ))}
+              <div className="mt-2 pt-2 border-t border-border">
+                <div className="px-4 pb-1 text-[10px] uppercase tracking-[0.3em] text-primary font-bold">More</div>
+                {moreNav.map((m) => (
+                  <NavLink
+                    key={m.to}
+                    to={m.to}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `block px-4 py-3 rounded-md text-sm font-semibold ${
+                        isActive ? "bg-primary/10 text-primary" : "text-foreground/80"
+                      }`
+                    }
+                  >
+                    {m.label}
+                  </NavLink>
+                ))}
+              </div>
               <Link
                 to="/connect#give"
                 onClick={() => setOpen(false)}
@@ -148,6 +209,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <ul className="space-y-2 text-sm">
               {nav.map((n) => (
                 <li key={n.to}><Link to={n.to} className="hover:text-primary transition-colors">{n.label}</Link></li>
+              ))}
+              {moreNav.map((m) => (
+                <li key={m.to}><Link to={m.to} className="hover:text-primary transition-colors">{m.label}</Link></li>
               ))}
             </ul>
           </div>

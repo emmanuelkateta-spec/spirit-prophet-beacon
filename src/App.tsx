@@ -11,6 +11,14 @@ import Ministries from "./pages/Ministries.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Connect from "./pages/Connect.tsx";
 import Sermons from "./pages/Sermons.tsx";
+import Blog from "./pages/Blog.tsx";
+import Press from "./pages/Press.tsx";
+import Podcasts from "./pages/Podcasts.tsx";
+import RevelationsHub from "./pages/RevelationsHub.tsx";
+import Academy from "./pages/Academy.tsx";
+import GlobalMap from "./pages/GlobalMap.tsx";
+import Testimonials from "./pages/Testimonials.tsx";
+import Appointment from "./pages/Appointment.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +38,14 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/sermons" element={<Sermons />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/press" element={<Press />} />
+          <Route path="/podcasts" element={<Podcasts />} />
+          <Route path="/revelations-hub" element={<RevelationsHub />} />
+          <Route path="/academy" element={<Academy />} />
+          <Route path="/global-map" element={<GlobalMap />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/appointment" element={<Appointment />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
