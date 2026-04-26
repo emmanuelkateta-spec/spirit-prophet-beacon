@@ -210,6 +210,32 @@ export default {
           "55%": { transform: "perspective(1600px) rotateY(-180deg)", zIndex: "1" },
           "100%": { transform: "perspective(1600px) rotateY(-180deg)", zIndex: "1" },
         },
+        "logo-heart-glow": {
+          "0%, 100%": {
+            transform: "scale(1.08)",
+            filter:
+              "drop-shadow(0 0 22px hsl(var(--primary) / 0.95)) drop-shadow(0 0 44px hsl(var(--accent) / 0.85)) drop-shadow(0 0 70px hsl(var(--primary) / 0.6))",
+          },
+          "20%": {
+            transform: "scale(0.94)",
+            filter:
+              "drop-shadow(0 0 4px hsl(var(--primary) / 0.25)) drop-shadow(0 0 8px hsl(var(--accent) / 0.15))",
+          },
+          "50%": {
+            transform: "scale(1.12)",
+            filter:
+              "drop-shadow(0 0 26px hsl(var(--accent) / 1)) drop-shadow(0 0 50px hsl(var(--primary) / 0.9)) drop-shadow(0 0 80px hsl(var(--accent) / 0.55))",
+          },
+          "70%": {
+            transform: "scale(0.96)",
+            filter:
+              "drop-shadow(0 0 5px hsl(var(--primary) / 0.3)) drop-shadow(0 0 10px hsl(var(--accent) / 0.2))",
+          },
+        },
+        "wheel-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(var(--spin-end, 1440deg))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -233,6 +259,8 @@ export default {
         "shutter-blink": "shutter-blink 4s ease-in-out infinite",
         "camera-shake": "camera-shake 4s ease-in-out infinite",
         "page-flip": "page-flip 4s ease-in-out forwards",
+        "logo-heart-glow": "logo-heart-glow 1.4s ease-in-out infinite",
+        "wheel-spin": "wheel-spin 5s cubic-bezier(0.17, 0.67, 0.16, 1) forwards",
       },
     },
   },

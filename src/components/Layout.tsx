@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border">
         <div className="container flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={logo} alt="Spirit Filled Ministry logo" className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/40 group-hover:ring-primary transition-all" />
+            <img src={logo} alt="Spirit Filled Ministry logo" className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/40 group-hover:ring-primary transition-all animate-logo-heart-glow" />
             <div className="leading-tight">
               <div className="font-display font-black text-base sm:text-lg tracking-wide">SPIRIT FILLED</div>
               <div className="text-[10px] sm:text-xs tracking-[0.3em] text-primary font-bold">MINISTRY</div>
@@ -194,7 +194,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="container py-16 grid md:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="" className="w-12 h-12 rounded-full object-cover" />
+              <img src={logo} alt="" className="w-12 h-12 rounded-full object-cover animate-logo-heart-glow" />
               <div>
                 <div className="font-display font-black">SPIRIT FILLED</div>
                 <div className="text-xs tracking-[0.3em] text-primary">MINISTRY</div>
