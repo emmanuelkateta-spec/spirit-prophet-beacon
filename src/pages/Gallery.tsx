@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
-import { Calendar, Archive } from "lucide-react";
+import { Calendar, Archive, BookOpen } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
+import FlipAlbum from "@/components/FlipAlbum";
 import p1 from "@/assets/prophet-1.jpg";
 import p2 from "@/assets/prophet-2.jpg";
 import p3 from "@/assets/prophet-3.jpg";
@@ -10,8 +11,16 @@ import w2 from "@/assets/worship-2.jpg";
 import w3 from "@/assets/worship-3.jpg";
 import m1 from "@/assets/ministry-1.jpg";
 import pr1 from "@/assets/prayer-1.jpg";
+import mac1 from "@/assets/mac-1.jpg";
+import mac2 from "@/assets/mac-2.jpg";
+import mac3 from "@/assets/mac-3.jpg";
+import mac4 from "@/assets/mac-4.jpg";
 
 const gallery = [
+  { src: mac1, caption: "Ministers Awakening — Round Table" },
+  { src: mac2, caption: "Ministers Awakening — Premier Prophet" },
+  { src: mac4, caption: "Ministers Awakening — Strategy Session" },
+  { src: mac3, caption: "Ministers Awakening — Sent Forth" },
   { src: p3, caption: "Suited for the Spirit" },
   { src: w1, caption: "On Bended Knee" },
   { src: p1, caption: "City Fellowship Outreach" },
@@ -39,6 +48,30 @@ export default function Gallery() {
         title={<>Captured <span className="text-gradient-gold">Moments</span></>}
         caption="Memories from our gatherings, services and encounters with the Holy Ghost."
       />
+
+      {/* Ministers Awakening Conference - Flipping Album */}
+      <section className="py-24 bg-muted">
+        <div className="container">
+          <div className="flex items-center gap-3 mb-3">
+            <BookOpen className="w-5 h-5 text-primary" />
+            <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Featured Event</span>
+          </div>
+          <h2 className="font-display font-black text-4xl sm:text-5xl mb-3">
+            Ministers Awakening <span className="text-gradient-flame">Conference</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mb-10">
+            A gathering of called and consecrated ministers — turning pages on what God did among us. Watch the album flip through the moments.
+          </p>
+          <FlipAlbum
+            images={[
+              { src: mac1, caption: "The Round Table of Counsel" },
+              { src: mac2, caption: "The Premier Prophet" },
+              { src: mac4, caption: "Sessions of Impartation" },
+              { src: mac3, caption: "Sent Forth in Power" },
+            ]}
+          />
+        </div>
+      </section>
 
       {/* Gallery grid */}
       <section className="py-24 container">

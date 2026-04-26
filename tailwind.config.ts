@@ -204,6 +204,12 @@ export default {
           "95%": { transform: "translate(-1px, 2px)" },
           "96%": { transform: "translate(0,0)" },
         },
+        "page-flip": {
+          "0%": { transform: "perspective(1600px) rotateY(0deg)", zIndex: "2" },
+          "45%": { transform: "perspective(1600px) rotateY(-150deg)", zIndex: "2" },
+          "55%": { transform: "perspective(1600px) rotateY(-180deg)", zIndex: "1" },
+          "100%": { transform: "perspective(1600px) rotateY(-180deg)", zIndex: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -226,6 +232,7 @@ export default {
         "flash-burst": "flash-burst 4s ease-in-out infinite",
         "shutter-blink": "shutter-blink 4s ease-in-out infinite",
         "camera-shake": "camera-shake 4s ease-in-out infinite",
+        "page-flip": "page-flip 4s ease-in-out forwards",
       },
     },
   },
