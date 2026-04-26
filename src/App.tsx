@@ -19,6 +19,8 @@ import Academy from "./pages/Academy.tsx";
 import GlobalMap from "./pages/GlobalMap.tsx";
 import Testimonials from "./pages/Testimonials.tsx";
 import Appointment from "./pages/Appointment.tsx";
+import Auth from "./pages/Auth.tsx";
+import Admin from "./pages/Admin.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -46,6 +48,8 @@ const App = () => (
           <Route path="/global-map" element={<GlobalMap />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
