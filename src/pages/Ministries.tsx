@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Flame, BookOpen, Users, Heart, Calendar, MapPin } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
+import FlipAlbum from "@/components/FlipAlbum";
 import BibleStudyForm from "@/components/forms/BibleStudyForm";
 import SoulWinnerForm from "@/components/forms/SoulWinnerForm";
 import ministry1 from "@/assets/ministry-1.jpg";
@@ -12,6 +13,10 @@ import worship2 from "@/assets/worship-2.jpg";
 import prayer1 from "@/assets/prayer-1.jpg";
 import prophet3 from "@/assets/prophet-3.jpg";
 import prophet1 from "@/assets/prophet-1.jpg";
+import mac1 from "@/assets/mac-1.jpg";
+import mac2 from "@/assets/mac-2.jpg";
+import mac3 from "@/assets/mac-3.jpg";
+import mac4 from "@/assets/mac-4.jpg";
 
 export default function Ministries() {
   const loc = useLocation();
@@ -133,6 +138,45 @@ export default function Ministries() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Ministers Awakening Conference */}
+      <section id="ministers-awakening" className="py-24 bg-muted scroll-mt-24">
+        <div className="container grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <BookOpen className="w-5 h-5 text-primary" />
+              <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Signature Event</span>
+            </div>
+            <h2 className="font-display font-black text-4xl sm:text-5xl mb-6">
+              Ministers Awakening <span className="text-gradient-flame">Conference</span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              A consecrated gathering of pastors, prophets, evangelists and ministry workers — convened by the Premier Prophet for impartation, strategy and reawakening to the original mandate. Each session sharpens vision, calling and assignment.
+            </p>
+            <ul className="space-y-3">
+              {[
+                "Round-table mentorship with seasoned ministers",
+                "Prophetic impartation and apostolic blessing",
+                "Strategy sessions for ministry growth",
+                "Sending forth with renewed fire",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-3">
+                  <Flame className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <FlipAlbum
+            images={[
+              { src: mac1, caption: "The Round Table of Counsel" },
+              { src: mac2, caption: "The Premier Prophet" },
+              { src: mac4, caption: "Sessions of Impartation" },
+              { src: mac3, caption: "Sent Forth in Power" },
+            ]}
+          />
         </div>
       </section>
     </Layout>
