@@ -1,10 +1,11 @@
 import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users, Landmark, Globe, CreditCard, Mail } from "lucide-react";
+import { Phone, Smartphone, Copy, Check, Heart, Gift, Sprout, HandCoins, Users, Landmark, Globe, CreditCard, Mail, Church, Music2, Building2, Accessibility, Hammer, BookOpen, GraduationCap, Bus, Utensils, Baby, ShieldCheck, HeartHandshake } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
 import MembershipForm from "@/components/forms/MembershipForm";
 import PartnerForm from "@/components/forms/PartnerForm";
+import SFMSpinWheel from "@/components/SFMSpinWheel";
 import { toast } from "sonner";
 
 const givingTypes = [
@@ -12,6 +13,21 @@ const givingTypes = [
   { icon: Gift, title: "Offerings", text: "A freewill expression of love and thanksgiving — given as the Lord lays on your heart." },
   { icon: Sprout, title: "Seeds", text: "Sow into the work of the Kingdom and expect a harvest of blessing in due season." },
   { icon: Heart, title: "Charity Foundation", text: "Support the Spirit Filled Charity Foundation reaching the poor, widows and orphans." },
+];
+
+const donationCauses = [
+  { icon: HeartHandshake, title: "Give to Charity", text: "Bless widows, orphans and the vulnerable through SFM Charity Foundation.", subject: "Donation — Charity Foundation" },
+  { icon: Music2, title: "Church Instruments", text: "Sow towards drums, keyboards, guitars, mics and worship gear.", subject: "Donation — Church Instruments" },
+  { icon: Accessibility, title: "Care for the Aged", text: "Support food, medication and visits to the elderly in our community.", subject: "Donation — The Aged" },
+  { icon: Hammer, title: "Build the Church", text: "Bricks, roofing, paint and finishing for our house of worship.", subject: "Donation — Build the Church" },
+  { icon: Building2, title: "1000 Buildings Project", text: "Partner with the prophetic mandate to plant 1,000 houses of God.", subject: "Donation — 1000 Buildings Project" },
+  { icon: Church, title: "Church Chairs & Furnishing", text: "Sponsor seating, pulpit, lighting and altar furnishings.", subject: "Donation — Church Furnishing" },
+  { icon: BookOpen, title: "Bibles & Literature", text: "Place Bibles, tracts and study material into hungry hands.", subject: "Donation — Bibles & Literature" },
+  { icon: GraduationCap, title: "SFM Academy & Scholarships", text: "Train sons & daughters of fire — sponsor a student through the academy.", subject: "Donation — SFM Academy" },
+  { icon: Bus, title: "Outreach & Crusades", text: "Fuel buses, sound systems and crusade logistics for soul-winning.", subject: "Donation — Outreach & Crusades" },
+  { icon: Utensils, title: "Feeding Programme", text: "Provide hot meals to the hungry at our weekly feeding outreach.", subject: "Donation — Feeding Programme" },
+  { icon: Baby, title: "Children & Youth", text: "Resource the next generation — Sunday School, youth camps & mentorship.", subject: "Donation — Children & Youth" },
+  { icon: ShieldCheck, title: "Missions & Travel", text: "Send the prophetic word to the nations through missionary travel.", subject: "Donation — Missions & Travel" },
 ];
 
 export default function Connect() {
@@ -123,6 +139,43 @@ export default function Connect() {
               <p className="text-sm text-muted-foreground leading-relaxed">{g.text}</p>
             </div>
           ))}
+        </div>
+
+        {/* Donation Causes */}
+        <div id="donate" className="mb-16 scroll-mt-24">
+          <div className="text-center mb-10">
+            <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Donate to a Cause</span>
+            <h3 className="font-display font-black text-3xl sm:text-4xl mt-3">Choose Where to <span className="text-gradient-flame">Sow</span></h3>
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">Tap a cause to donate. We'll send you the giving details and a thank-you note from the ministry.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {donationCauses.map((c) => (
+              <a
+                key={c.title}
+                href={`mailto:giving@spiritfilled.org?subject=${encodeURIComponent(c.subject)}&body=${encodeURIComponent("Hello, I would like to donate towards: " + c.title + ". Please send me the giving details. Thank you and God bless.")}`}
+                className="group p-6 rounded-2xl border-2 border-border bg-card hover:border-primary hover:-translate-y-1 transition-all shadow-elegant flex flex-col"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-flame flex items-center justify-center shadow-flame group-hover:animate-flame-flicker">
+                    <c.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h4 className="font-display font-bold text-lg leading-tight">{c.title}</h4>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{c.text}</p>
+                <span className="bg-gradient-flame text-primary-foreground text-center px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-flame group-hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
+                  <Heart className="w-3.5 h-3.5" /> Donate Now
+                </span>
+              </a>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted-foreground mt-6">
+            Prefer mobile money? Send to <span className="font-bold text-primary">Airtel Money 0973 516 896</span> with the cause as your reference.
+          </p>
+        </div>
+
+        {/* SFM Spin Wheel */}
+        <div className="mb-16">
+          <SFMSpinWheel />
         </div>
 
         {/* How to Give */}
