@@ -55,38 +55,41 @@ export default function Connect() {
       />
 
       {/* Quick contact bar */}
-      <section className="py-10 bg-gradient-flame text-primary-foreground">
-        <div className="container grid sm:grid-cols-2 gap-6">
-          <a href="tel:+260976747922" className="flex items-center gap-4 group">
-            <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors">
-              <Phone className="w-6 h-6" />
+      <section className="py-8 sm:py-10 bg-gradient-flame text-primary-foreground">
+        <div className="container grid sm:grid-cols-2 gap-5 sm:gap-6">
+          <a href="tel:+260976747922" className="flex items-center gap-3 sm:gap-4 group min-w-0">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/15 flex-shrink-0 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <div className="text-xs uppercase tracking-widest opacity-80">Church Inquiries</div>
-              <div className="font-display font-bold text-2xl">+260 976 747 922</div>
+            <div className="min-w-0">
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest opacity-80">Church Inquiries</div>
+              <div className="font-display font-bold text-lg sm:text-2xl truncate">+260 976 747 922</div>
             </div>
           </a>
-          <button onClick={() => copy("0973516896")} className="flex items-center gap-4 text-left group">
-            <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors">
-              <Smartphone className="w-6 h-6" />
+          <button onClick={() => copy("0973516896")} className="flex items-center gap-3 sm:gap-4 text-left group min-w-0">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/15 flex-shrink-0 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+              <Smartphone className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div className="flex-1">
-              <div className="text-xs uppercase tracking-widest opacity-80">Airtel Money — Givings</div>
-              <div className="font-display font-bold text-2xl flex items-center gap-3">0973 516 896 {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5 opacity-60" />}</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest opacity-80">Airtel Money — Givings</div>
+              <div className="font-display font-bold text-lg sm:text-2xl flex items-center gap-2 sm:gap-3">
+                <span className="truncate">0973 516 896</span>
+                {copied ? <Check className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> : <Copy className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 flex-shrink-0" />}
+              </div>
             </div>
           </button>
         </div>
       </section>
 
       {/* Membership */}
-      <section id="membership" className="py-24 container scroll-mt-24">
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
+      <section id="membership" className="py-16 sm:py-24 container scroll-mt-24">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-3">
               <Users className="w-5 h-5 text-primary" />
               <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Membership</span>
             </div>
-            <h2 className="font-display font-black text-4xl sm:text-5xl mb-6">Become a <span className="text-gradient-flame">Member</span></h2>
+            <h2 className="font-display font-black text-3xl sm:text-5xl mb-5 sm:mb-6">Become a <span className="text-gradient-flame">Member</span></h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">You weren't created to walk alone. Plant your roots in a Spirit-filled family that prays for you, contends for you, and watches you flourish.</p>
             <ul className="space-y-2 text-muted-foreground">
               <li>• Pastoral covering</li>
@@ -95,18 +98,18 @@ export default function Connect() {
               <li>• Weekly fellowship</li>
             </ul>
           </div>
-          <div className="lg:col-span-3 bg-muted p-8 rounded-2xl shadow-elegant">
-            <h3 className="font-display font-bold text-2xl mb-6">Membership Registration</h3>
+          <div className="lg:col-span-3 bg-muted p-5 sm:p-8 rounded-2xl shadow-elegant">
+            <h3 className="font-display font-bold text-xl sm:text-2xl mb-5 sm:mb-6">Membership Registration</h3>
             <MembershipForm />
           </div>
         </div>
       </section>
 
       {/* Partner */}
-      <section id="partner" className="py-24 bg-muted scroll-mt-24">
-        <div className="container grid lg:grid-cols-5 gap-12 items-start">
-          <div className="lg:col-span-3 bg-background p-8 rounded-2xl shadow-elegant order-2 lg:order-1">
-            <h3 className="font-display font-bold text-2xl mb-6">Ministry Partner Registration</h3>
+      <section id="partner" className="py-16 sm:py-24 bg-muted scroll-mt-24">
+        <div className="container grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
+          <div className="lg:col-span-3 bg-background p-5 sm:p-8 rounded-2xl shadow-elegant order-2 lg:order-1">
+            <h3 className="font-display font-bold text-xl sm:text-2xl mb-5 sm:mb-6">Ministry Partner Registration</h3>
             <PartnerForm />
           </div>
           <div className="lg:col-span-2 order-1 lg:order-2">
@@ -114,7 +117,7 @@ export default function Connect() {
               <Heart className="w-5 h-5 text-primary" />
               <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Ministry Partnership</span>
             </div>
-            <h2 className="font-display font-black text-4xl sm:text-5xl mb-6">Stand With <span className="text-gradient-flame">the Vision</span></h2>
+            <h2 className="font-display font-black text-3xl sm:text-5xl mb-5 sm:mb-6">Stand With <span className="text-gradient-flame">the Vision</span></h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">Become a Ministry Partner and stand alongside Premier Prophet Epas in advancing the gospel — through prayer, giving and intentional support of the work.</p>
             <p className="text-muted-foreground">Together we are reaching nations.</p>
           </div>
@@ -122,10 +125,10 @@ export default function Connect() {
       </section>
 
       {/* Giving */}
-      <section id="give" className="py-24 container scroll-mt-24">
-        <div className="text-center mb-14">
+      <section id="give" className="py-16 sm:py-24 container scroll-mt-24">
+        <div className="text-center mb-10 sm:mb-14">
           <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Giving</span>
-          <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl mt-3 mb-4">Sow into <span className="text-gradient-flame">Eternity</span></h2>
+          <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl mt-3 mb-4">Sow into <span className="text-gradient-flame">Eternity</span></h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">"Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver." — 2 Cor 9:7</p>
         </div>
 
@@ -179,10 +182,10 @@ export default function Connect() {
         </div>
 
         {/* How to Give */}
-        <div className="bg-secondary text-secondary-foreground rounded-3xl p-10 lg:p-14 shadow-elegant relative overflow-hidden">
+        <div className="bg-secondary text-secondary-foreground rounded-3xl p-6 sm:p-10 lg:p-14 shadow-elegant relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-radial opacity-30 pointer-events-none" />
           <div className="relative">
-            <h3 className="font-display font-black text-3xl sm:text-4xl mb-8 text-center">How to Give via <span className="text-gradient-gold">Airtel Money</span></h3>
+            <h3 className="font-display font-black text-2xl sm:text-4xl mb-6 sm:mb-8 text-center">How to Give via <span className="text-gradient-gold">Airtel Money</span></h3>
             <ol className="grid md:grid-cols-3 gap-6 mb-10">
               {[
                 { n: "1", title: "Dial *115#", text: "Open Airtel Money on your phone." },
@@ -197,9 +200,9 @@ export default function Connect() {
               ))}
             </ol>
 
-            <div className="bg-gradient-flame rounded-2xl p-8 text-center text-primary-foreground shadow-flame">
+            <div className="bg-gradient-flame rounded-2xl p-6 sm:p-8 text-center text-primary-foreground shadow-flame">
               <div className="text-xs uppercase tracking-[0.4em] opacity-90 mb-2">Airtel Money Number</div>
-              <div className="font-display font-black text-4xl sm:text-5xl mb-4">0973 516 896</div>
+              <div className="font-display font-black text-3xl sm:text-5xl mb-4 break-words">0973 516 896</div>
               <button onClick={() => copy("0973516896")} className="bg-white text-primary px-6 py-3 rounded-full font-bold uppercase tracking-wider text-xs inline-flex items-center gap-2 hover:scale-105 transition-transform">
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />} {copied ? "Copied" : "Copy Number"}
               </button>

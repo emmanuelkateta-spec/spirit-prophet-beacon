@@ -58,7 +58,7 @@ export default function SFMSpinWheel() {
   }
 
   return (
-    <div className="relative bg-secondary text-secondary-foreground rounded-3xl p-8 lg:p-12 shadow-elegant overflow-hidden">
+    <div className="relative bg-secondary text-secondary-foreground rounded-3xl p-5 sm:p-8 lg:p-12 shadow-elegant overflow-hidden">
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
@@ -67,24 +67,24 @@ export default function SFMSpinWheel() {
           filter: "blur(60px)",
         }}
       />
-      <div className="relative grid lg:grid-cols-2 gap-10 items-center">
+      <div className="relative grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
         {/* Left text */}
-        <div>
+        <div className="text-center lg:text-left">
           <div className="flex items-center gap-2 mb-3">
             <Sparkles className="w-5 h-5 text-accent" />
             <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">SFM Spin Wheel</span>
           </div>
-          <h2 className="font-display font-black text-4xl sm:text-5xl mb-4">
+          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl mb-4">
             Spin the <span className="text-gradient-gold">Wheel of Fire</span>
           </h2>
-          <p className="text-secondary-foreground/80 leading-relaxed mb-6">
+          <p className="text-sm sm:text-base text-secondary-foreground/80 leading-relaxed mb-6">
             Discover what the Spirit is doing at SFM. One spin reveals an upcoming event,
             ministry opportunity or way to partner with the vision of Premier Prophet Epas.
           </p>
-          <ul className="grid grid-cols-2 gap-2 text-xs text-secondary-foreground/70 mb-6">
+          <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-[11px] sm:text-xs text-secondary-foreground/70 mb-6 text-left">
             {SLICES.map((s) => (
-              <li key={s.label} className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: s.color }} />
+              <li key={s.label} className="flex items-center gap-2 min-w-0">
+                <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: s.color }} />
                 <span className="truncate">{s.short}</span>
               </li>
             ))}
@@ -92,7 +92,7 @@ export default function SFMSpinWheel() {
           <button
             onClick={spin}
             disabled={spinning}
-            className="bg-gradient-flame text-primary-foreground px-7 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-flame hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center gap-2"
+            className="bg-gradient-flame text-primary-foreground px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-flame hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center gap-2"
           >
             <RotateCw className={`w-4 h-4 ${spinning ? "animate-spin" : ""}`} />
             {spinning ? "Spinning..." : "Spin the Wheel"}
@@ -100,7 +100,7 @@ export default function SFMSpinWheel() {
         </div>
 
         {/* Wheel */}
-        <div className="relative mx-auto w-[300px] sm:w-[380px] aspect-square">
+        <div className="relative mx-auto w-[260px] xs:w-[300px] sm:w-[360px] lg:w-[400px] aspect-square">
           {/* Pointer */}
           <div className="absolute left-1/2 -top-2 -translate-x-1/2 z-20">
             <div className="w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-t-[24px] border-t-accent drop-shadow-[0_4px_8px_hsl(var(--accent)/0.6)]" />
@@ -120,7 +120,7 @@ export default function SFMSpinWheel() {
           {/* Wheel face */}
           <div
             ref={wheelRef}
-            className="absolute inset-2 rounded-full transition-transform"
+            className="absolute inset-2 rounded-full transition-transform overflow-hidden"
             style={{
               background: conicGradient,
               transform: `rotate(${rotation}deg)`,
@@ -134,10 +134,13 @@ export default function SFMSpinWheel() {
               return (
                 <div
                   key={s.label}
-                  className="absolute left-1/2 top-1/2 origin-left text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-white whitespace-nowrap"
+                  className="absolute left-1/2 top-1/2 origin-left text-[9px] sm:text-[11px] font-bold uppercase tracking-wider text-white whitespace-nowrap pr-3 sm:pr-4"
                   style={{
-                    transform: `rotate(${angle}deg) translate(8px, -6px)`,
+                    transform: `rotate(${angle}deg) translate(10px, -6px)`,
                     textShadow: "0 1px 2px rgba(0,0,0,0.8)",
+                    maxWidth: "44%",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   {s.short}
@@ -149,7 +152,7 @@ export default function SFMSpinWheel() {
           <button
             onClick={spin}
             disabled={spinning}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-20 h-20 rounded-full bg-gradient-flame text-primary-foreground font-display font-black text-lg shadow-flame border-4 border-secondary hover:scale-105 transition-transform disabled:opacity-70"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-flame text-primary-foreground font-display font-black text-base sm:text-lg shadow-flame border-4 border-secondary hover:scale-105 transition-transform disabled:opacity-70"
             aria-label="Spin"
           >
             SFM
@@ -159,9 +162,9 @@ export default function SFMSpinWheel() {
 
       {/* Result modal */}
       {winner && (
-        <div className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in" onClick={() => setWinner(null)}>
+        <div className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-fade-in" onClick={() => setWinner(null)}>
           <div
-            className="relative max-w-md w-full bg-background text-foreground rounded-3xl p-8 shadow-elegant border-4"
+            className="relative max-w-md w-full bg-background text-foreground rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-elegant border-4 max-h-[90vh] overflow-y-auto"
             style={{ borderColor: winner.color }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -171,14 +174,14 @@ export default function SFMSpinWheel() {
             <div className="text-xs tracking-[0.3em] uppercase font-bold mb-2" style={{ color: winner.color }}>
               The Spirit revealed
             </div>
-            <h3 className="font-display font-black text-2xl sm:text-3xl mb-3">{winner.label}</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">{winner.description}</p>
-            <div className="flex flex-wrap gap-3">
+            <h3 className="font-display font-black text-xl sm:text-3xl mb-3 leading-tight">{winner.label}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">{winner.description}</p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
               {winner.cta && (
                 <Link
                   to={winner.cta.to}
                   onClick={() => setWinner(null)}
-                  className="bg-gradient-flame text-primary-foreground px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-flame hover:scale-105 transition-transform"
+                  className="bg-gradient-flame text-primary-foreground text-center px-5 py-3 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-flame hover:scale-105 transition-transform"
                 >
                   {winner.cta.label}
                 </Link>
@@ -188,7 +191,7 @@ export default function SFMSpinWheel() {
                   setWinner(null);
                   setTimeout(spin, 200);
                 }}
-                className="border-2 border-border px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-colors"
+                className="border-2 border-border px-5 py-3 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-colors"
               >
                 Spin Again
               </button>
