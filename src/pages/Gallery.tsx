@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Calendar, Archive, BookOpen } from "lucide-react";
+import { Calendar, Archive, BookOpen, Moon, Flame } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
 import FlipAlbum from "@/components/FlipAlbum";
 import p1 from "@/assets/prophet-1.jpg";
@@ -15,12 +15,28 @@ import mac1 from "@/assets/mac-1.jpg";
 import mac2 from "@/assets/mac-2.jpg";
 import mac3 from "@/assets/mac-3.jpg";
 import mac4 from "@/assets/mac-4.jpg";
+import on1 from "@/assets/overnight-1.jpg";
+import on2 from "@/assets/overnight-2.jpg";
+import on3 from "@/assets/overnight-3.jpg";
+import on4 from "@/assets/overnight-4.jpg";
+import on5 from "@/assets/overnight-5.jpg";
+import on6 from "@/assets/overnight-6.jpg";
+import on7 from "@/assets/overnight-7.jpg";
+import on8 from "@/assets/overnight-8.jpg";
 
 const gallery = [
   { src: mac1, caption: "Ministers Awakening — Round Table" },
   { src: mac2, caption: "Ministers Awakening — Premier Prophet" },
   { src: mac4, caption: "Ministers Awakening — Strategy Session" },
   { src: mac3, caption: "Ministers Awakening — Sent Forth" },
+  { src: on1, caption: "SFM Overnight — Hands Lifted High" },
+  { src: on2, caption: "SFM Overnight — Testimony Time" },
+  { src: on3, caption: "SFM Overnight — Prophet Walks In" },
+  { src: on4, caption: "SFM Overnight — Holy Hush" },
+  { src: on5, caption: "SFM Overnight — Prophetic Word" },
+  { src: on6, caption: "SFM Overnight — Travailing in Prayer" },
+  { src: on7, caption: "SFM Overnight — At the Altar" },
+  { src: on8, caption: "SFM Overnight — Anointing the Bowed" },
   { src: p3, caption: "Suited for the Spirit" },
   { src: w1, caption: "On Bended Knee" },
   { src: p1, caption: "City Fellowship Outreach" },
@@ -70,6 +86,47 @@ export default function Gallery() {
               { src: mac3, caption: "Sent Forth in Power" },
             ]}
           />
+        </div>
+      </section>
+
+      {/* SFM Overnight Conference - Flipping Album */}
+      <section className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-radial opacity-20 pointer-events-none" />
+        <div className="container relative">
+          <div className="flex items-center gap-3 mb-3">
+            <Moon className="w-5 h-5 text-accent" />
+            <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold">All Night Encounter</span>
+          </div>
+          <h2 className="font-display font-black text-4xl sm:text-5xl mb-3">
+            SFM Overnight <span className="text-gradient-gold">Conference</span>
+          </h2>
+          <p className="text-secondary-foreground/70 max-w-2xl mb-10">
+            Where the church watches and prays till daybreak — travail, prophecy, deliverance and the dew of Heaven. Flip through the album of our recent overnights.
+          </p>
+          <FlipAlbum
+            eyebrow="SFM Overnight"
+            images={[
+              { src: on1, caption: "Hands Lifted Through the Night" },
+              { src: on2, caption: "Testimonies Before Daybreak" },
+              { src: on3, caption: "The Prophet Walks In" },
+              { src: on8, caption: "Anointing the Bowed" },
+              { src: on5, caption: "A Prophetic Word at Midnight" },
+              { src: on6, caption: "Travailing in Prayer" },
+              { src: on7, caption: "At the Altar of Fire" },
+              { src: on4, caption: "A Holy Hush Fell" },
+            ]}
+          />
+          <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a
+              href="mailto:overnight@spiritfilled.org?subject=SFM%20Overnight%20Registration&body=Name%3A%0APhone%3A%0ACity%2FCountry%3A%0AAttending%20with%20how%20many%20guests%3A%0APrayer%20Request%3A"
+              className="inline-flex items-center gap-2 bg-gradient-flame text-primary-foreground px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform"
+            >
+              <Flame className="w-4 h-4" /> Register for the Upcoming All-Night
+            </a>
+            <p className="text-xs uppercase tracking-[0.3em] text-accent/80 font-bold">
+              Doors 21:00 · Dismissal at Daybreak
+            </p>
+          </div>
         </div>
       </section>
 

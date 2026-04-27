@@ -4,9 +4,10 @@ import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 interface FlipAlbumProps {
   images: { src: string; caption: string }[];
   autoPlayMs?: number;
+  eyebrow?: string;
 }
 
-export default function FlipAlbum({ images, autoPlayMs = 4500 }: FlipAlbumProps) {
+export default function FlipAlbum({ images, autoPlayMs = 4500, eyebrow = "Ministers Awakening" }: FlipAlbumProps) {
   const [index, setIndex] = useState(0);
   const [flipping, setFlipping] = useState(false);
 
@@ -47,7 +48,7 @@ export default function FlipAlbum({ images, autoPlayMs = 4500 }: FlipAlbumProps)
           <img src={next.src} alt={next.caption} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-secondary/10 to-transparent" />
           <div className="absolute bottom-0 inset-x-0 p-5 text-secondary-foreground">
-            <p className="text-xs uppercase tracking-[0.4em] text-accent font-bold">Ministers Awakening</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-accent font-bold">{eyebrow}</p>
             <h4 className="font-display font-black text-xl sm:text-2xl">{next.caption}</h4>
           </div>
         </div>
@@ -65,7 +66,7 @@ export default function FlipAlbum({ images, autoPlayMs = 4500 }: FlipAlbumProps)
           <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-black/30 to-transparent pointer-events-none" />
           <div className="absolute bottom-0 inset-x-0 p-5 text-secondary-foreground">
             <p className="text-xs uppercase tracking-[0.4em] text-accent font-bold flex items-center gap-2">
-              <BookOpen className="w-3.5 h-3.5" /> Ministers Awakening
+              <BookOpen className="w-3.5 h-3.5" /> {eyebrow}
             </p>
             <h4 className="font-display font-black text-xl sm:text-2xl">{current.caption}</h4>
           </div>
