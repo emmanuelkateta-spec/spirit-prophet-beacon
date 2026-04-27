@@ -23,7 +23,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative h-[92vh] min-h-[600px] w-full overflow-hidden bg-secondary">
+    <section className="relative h-[88vh] min-h-[560px] w-full overflow-hidden bg-secondary">
       {slides.map((s, idx) => (
         <div
           key={idx}
@@ -50,22 +50,22 @@ export default function HeroCarousel() {
             <Flame className="w-5 h-5 text-accent animate-flame-flicker" />
             <span className="text-xs sm:text-sm tracking-[0.4em] uppercase text-accent font-semibold">{slides[i].eyebrow}</span>
           </div>
-          <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-8xl leading-[0.95] mb-6 animate-fade-in-up">
+          <h1 className="font-display font-black text-4xl xs:text-5xl sm:text-6xl lg:text-8xl leading-[0.95] mb-5 sm:mb-6 animate-fade-in-up">
             {slides[i].title}
           </h1>
-          <p className="text-lg sm:text-xl text-white/85 max-w-xl mb-10 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
+          <p className="text-base sm:text-xl text-white/85 max-w-xl mb-8 sm:mb-10 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
             {slides[i].caption}
           </p>
-          <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-wrap gap-3 sm:gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <Link
               to="/connect#membership"
-              className="group bg-gradient-flame text-primary-foreground px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform inline-flex items-center gap-2"
+              className="group bg-gradient-flame text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm shadow-flame hover:scale-105 transition-transform inline-flex items-center gap-2"
             >
               Join the Family <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/about"
-              className="border-2 border-white/40 backdrop-blur-sm bg-white/5 text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-secondary transition-colors"
+              className="border-2 border-white/40 backdrop-blur-sm bg-white/5 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm hover:bg-white hover:text-secondary transition-colors"
             >
               Our Story
             </Link>

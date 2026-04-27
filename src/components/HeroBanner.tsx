@@ -35,7 +35,7 @@ export default function HeroBanner({ variant, eyebrow, title, caption }: HeroBan
   }, [images.length]);
 
   return (
-    <section className="relative py-32 bg-secondary text-secondary-foreground overflow-hidden min-h-[420px]">
+    <section className="relative py-20 sm:py-28 lg:py-32 bg-secondary text-secondary-foreground overflow-hidden min-h-[360px] sm:min-h-[420px]">
       {/* Layered crossfading Ken-Burns images */}
       <div className="absolute inset-0">
         {images.map((src, idx) => (
@@ -71,11 +71,11 @@ export default function HeroBanner({ variant, eyebrow, title, caption }: HeroBan
       />
 
       <div className="container relative text-center">
-        <span className="text-xs tracking-[0.4em] uppercase text-accent font-bold animate-fade-in">{eyebrow}</span>
-        <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl mt-4 mb-6 animate-fade-in-up">
+        <span className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-accent font-bold animate-fade-in">{eyebrow}</span>
+        <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl mt-4 mb-5 sm:mb-6 animate-fade-in-up leading-[1.05]">
           {title}
         </h1>
-        <p className="text-lg max-w-2xl mx-auto text-white/80 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <p className="text-base sm:text-lg max-w-2xl mx-auto text-white/80 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           {caption}
         </p>
 
