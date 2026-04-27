@@ -21,6 +21,7 @@ const moreNav = [
   { to: "/global-map", label: "SFM Global Map" },
   { to: "/testimonials", label: "Testimonials" },
   { to: "/appointment", label: "Book Appointment" },
+  { to: "/bible", label: "Read the Bible" },
 ];
 
 export default function Layout({ children }: { children: ReactNode }) {
