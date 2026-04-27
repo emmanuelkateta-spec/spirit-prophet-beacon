@@ -43,22 +43,22 @@ const Index = () => {
       </div>
 
       {/* Welcome */}
-      <section className="py-24 container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-24 container">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           <div className="relative">
             <img src={prophet4} alt="Premier Prophet Epas ministering" className="w-full rounded-2xl shadow-elegant object-cover aspect-[4/5]" />
-            <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-gradient-flame text-primary-foreground p-6 rounded-xl shadow-flame max-w-[220px]">
-              <Flame className="w-8 h-8 mb-2 animate-flame-flicker" />
-              <div className="font-display font-bold text-lg leading-tight">Premier Prophet Epas</div>
-              <div className="text-xs uppercase tracking-widest opacity-90 mt-1">Founder and President</div>
+            <div className="absolute -bottom-6 sm:-bottom-8 right-2 sm:-right-8 bg-gradient-flame text-primary-foreground p-4 sm:p-6 rounded-xl shadow-flame max-w-[180px] sm:max-w-[220px]">
+              <Flame className="w-6 h-6 sm:w-8 sm:h-8 mb-2 animate-flame-flicker" />
+              <div className="font-display font-bold text-base sm:text-lg leading-tight">Premier Prophet Epas</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest opacity-90 mt-1">Founder and President</div>
             </div>
           </div>
-          <div>
+          <div className="mt-6 lg:mt-0">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-px bg-primary" />
               <span className="text-xs tracking-[0.4em] uppercase text-primary font-bold">Welcome Home</span>
             </div>
-            <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
+            <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl mb-5 sm:mb-6 leading-tight">
               A House on <span className="text-gradient-flame">Fire</span> for God
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">

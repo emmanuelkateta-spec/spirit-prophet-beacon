@@ -77,30 +77,30 @@ export default function FlipAlbum({ images, autoPlayMs = 4500, eyebrow = "Minist
       </div>
 
       {/* Controls */}
-      <div className="mt-5 flex items-center justify-between">
+      <div className="mt-5 flex items-center justify-between gap-2">
         <button
           onClick={goPrev}
-          className="inline-flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex items-center gap-1.5 bg-card border border-border px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
           aria-label="Previous page"
         >
-          <ChevronLeft className="w-4 h-4" /> Prev
+          <ChevronLeft className="w-4 h-4" /> <span className="hidden xs:inline">Prev</span>
         </button>
-        <div className="flex gap-2">
+        <div className="flex gap-1.5 sm:gap-2 flex-wrap justify-center max-w-[55%]">
           {images.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
               aria-label={`Page ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all ${i === index ? "bg-primary w-8" : "bg-border w-4 hover:bg-muted-foreground"}`}
+              className={`h-1.5 rounded-full transition-all ${i === index ? "bg-primary w-6 sm:w-8" : "bg-border w-3 sm:w-4 hover:bg-muted-foreground"}`}
             />
           ))}
         </div>
         <button
           onClick={goNext}
-          className="inline-flex items-center gap-2 bg-card border border-border px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex items-center gap-1.5 bg-card border border-border px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
           aria-label="Next page"
         >
-          Next <ChevronRight className="w-4 h-4" />
+          <span className="hidden xs:inline">Next</span> <ChevronRight className="w-4 h-4" />
         </button>
       </div>
     </div>
