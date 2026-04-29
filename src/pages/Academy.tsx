@@ -38,7 +38,7 @@ export default function Academy() {
               <p className="text-sm text-muted-foreground mt-2">{c.desc}</p>
               <div className="flex items-center justify-between mt-6 pt-4 border-t border-border">
                 <span className="text-xs uppercase tracking-widest text-primary font-bold">{c.duration}</span>
-                <a href="mailto:academy@spiritfilled.org?subject=Enroll%20-%20Academy" className="inline-flex items-center gap-1.5 text-sm font-bold text-primary group-hover:gap-2.5 transition-all">Enroll <ArrowRight className="w-4 h-4" /></a>
+                <a href="mailto:info@spiritfilledministry.org?subject=Enroll%20-%20Academy" className="inline-flex items-center gap-1.5 text-sm font-bold text-primary group-hover:gap-2.5 transition-all">Enroll <ArrowRight className="w-4 h-4" /></a>
               </div>
             </div>
           ))}
@@ -49,7 +49,7 @@ export default function Academy() {
           <div className="relative">
             <h3 className="font-display font-black text-3xl sm:text-4xl">Ready to <span className="text-gradient-gold">Sharpen Your Skill</span>?</h3>
             <p className="text-secondary-foreground/80 mt-3 max-w-xl mx-auto">Cohorts open quarterly. Reserve your seat and step into your next season of growth.</p>
-            <a href="mailto:academy@spiritfilled.org?subject=Academy%20Enrollment" className="inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm animate-beat-grow hover:scale-110 transition-transform">Apply Now</a>
+            <a href="mailto:info@spiritfilledministry.org?subject=Academy%20Enrollment" className="inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm animate-beat-grow hover:scale-110 transition-transform">Apply Now</a>
           </div>
         </div>
       </section>

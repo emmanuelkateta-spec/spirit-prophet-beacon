@@ -155,7 +155,7 @@ export default function Connect() {
             {donationCauses.map((c) => (
               <a
                 key={c.title}
-                href={`mailto:giving@spiritfilled.org?subject=${encodeURIComponent(c.subject)}&body=${encodeURIComponent("Hello, I would like to donate towards: " + c.title + ". Please send me the giving details. Thank you and God bless.")}`}
+                href={`mailto:info@spiritfilledministry.org?subject=${encodeURIComponent(c.subject)}&body=${encodeURIComponent("Hello, I would like to donate towards: " + c.title + ". Please send me the giving details. Thank you and God bless.")}`}
                 className="group p-6 rounded-2xl border-2 border-border bg-card hover:border-primary hover:-translate-y-1 transition-all shadow-elegant flex flex-col"
               >
                 <div className="flex items-center gap-3 mb-3">
@@ -251,7 +251,7 @@ export default function Connect() {
                 <h4 className="font-display font-bold text-xl mb-2">{opt.title}</h4>
                 <p className="text-sm text-muted-foreground mb-6 flex-1">{opt.text}</p>
                 <a
-                  href={`mailto:giving@spiritfilled.org?subject=${encodeURIComponent(opt.subject)}&body=${encodeURIComponent("Hello, please send me the " + opt.title.toLowerCase() + " information so I can give. Thank you and God bless.")}`}
+                  href={`mailto:info@spiritfilledministry.org?subject=${encodeURIComponent(opt.subject)}&body=${encodeURIComponent("Hello, please send me the " + opt.title.toLowerCase() + " information so I can give. Thank you and God bless.")}`}
                   className="bg-gradient-flame text-primary-foreground text-center px-5 py-3 rounded-full text-sm font-bold uppercase tracking-wider shadow-flame hover:scale-105 transition-transform inline-flex items-center justify-center gap-2"
                 >
                   <Mail className="w-4 h-4" /> {opt.cta}

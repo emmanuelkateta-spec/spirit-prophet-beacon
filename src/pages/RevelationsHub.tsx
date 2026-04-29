@@ -97,7 +97,7 @@ export default function RevelationsHub() {
 
               <div className="mt-8 pt-8 border-t border-white/10">
                 <p className="text-sm text-secondary-foreground/70 mb-4">No access code? Send a personal request to be considered.</p>
-                <a href="mailto:hub@spiritfilled.org?subject=Revelations%20Hub%20Access%20Request" className="inline-block w-full text-center bg-white/10 hover:bg-white/20 text-secondary-foreground py-3 rounded-full font-bold uppercase tracking-wider text-sm transition-colors">Request Consideration</a>
+                <a href="mailto:info@spiritfilledministry.org?subject=Revelations%20Hub%20Access%20Request" className="inline-block w-full text-center bg-white/10 hover:bg-white/20 text-secondary-foreground py-3 rounded-full font-bold uppercase tracking-wider text-sm transition-colors">Request Consideration</a>
               </div>
             </div>
           </div>

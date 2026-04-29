@@ -34,7 +34,7 @@ export default function Appointment() {
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nPreferred Date: ${form.date}\nPreferred Time: ${form.time}\nPurpose: ${form.purpose}\n\nNotes:\n${form.notes}`
     );
-    window.location.href = `mailto:appointments@spiritfilled.org?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@spiritfilledministry.org?subject=${subject}&body=${body}`;
     toast.success("Opening your email — your request will be sent to the Prophet's office.");
   };
 
@@ -67,7 +67,8 @@ export default function Appointment() {
                 <li className="flex items-center gap-3"><Clock className="w-4 h-4 text-primary" /> Tue – Fri · 10:00 AM – 4:00 PM</li>
                 <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-primary" /> Spirit Filled Ministry HQ</li>
                 <li className="flex items-center gap-3"><Phone className="w-4 h-4 text-primary" /> +260 976 747 922</li>
-                <li className="flex items-center gap-3"><Mail className="w-4 h-4 text-primary" /> appointments@spiritfilled.org</li>
+                <li className="flex items-center gap-3"><Mail className="w-4 h-4 text-primary" /> info@spiritfilledministry.org</li>
+                <li className="flex items-center gap-3 break-all"><Mail className="w-4 h-4 text-primary shrink-0" /> Spiritfilledministrychurch@gmail.com</li>
               </ul>
             </div>
           </div>

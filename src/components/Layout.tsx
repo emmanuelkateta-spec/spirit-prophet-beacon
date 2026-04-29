@@ -231,6 +231,8 @@ export default function Layout({ children }: { children: ReactNode }) {
             <ul className="space-y-2 text-sm text-secondary-foreground/80">
               <li>Inquiries: <a href="tel:+260976747922" className="hover:text-primary">+260 976 747 922</a></li>
               <li>Givings (Airtel Money): <span className="text-primary font-bold">0973 516 896</span></li>
+              <li className="break-all">Email: <a href="mailto:info@spiritfilledministry.org" className="hover:text-primary">info@spiritfilledministry.org</a></li>
+              <li className="break-all"><a href="mailto:Spiritfilledministrychurch@gmail.com" className="hover:text-primary">Spiritfilledministrychurch@gmail.com</a></li>
             </ul>
             <div className="flex gap-3 mt-4">
               <a href="https://www.facebook.com/share/v/1RdgjVwKms/" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="w-4 h-4" /></a>
