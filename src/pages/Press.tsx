@@ -39,7 +39,7 @@ export default function Press() {
                 </div>
                 <h3 className="font-display font-black text-2xl sm:text-3xl group-hover:text-primary transition-colors">{n.title}</h3>
                 <p className="text-muted-foreground mt-3">{n.summary}</p>
-                <a href="mailto:press@spiritfilled.org" className="inline-flex items-center gap-2 mt-5 text-primary font-bold text-sm uppercase tracking-wider w-fit">
+                <a href="mailto:info@spiritfilledministry.org" className="inline-flex items-center gap-2 mt-5 text-primary font-bold text-sm uppercase tracking-wider w-fit">
                   Read Full Story <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
@@ -79,7 +79,7 @@ export default function Press() {
             </div>
             <h3 className="font-display font-black text-2xl sm:text-3xl">Media Inquiries</h3>
             <p className="text-secondary-foreground/80 mt-2 max-w-xl mx-auto">For interviews, press passes, and official statements from Spirit Filled Ministry.</p>
-            <a href="mailto:press@spiritfilled.org" className="relative inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform">Contact Press Team</a>
+            <a href="mailto:info@spiritfilledministry.org" className="relative inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform">Contact Press Team</a>
           </div>
         </div>
       </section>

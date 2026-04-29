@@ -120,7 +120,7 @@ export default function GlobalMap() {
         <div className="mt-16 rounded-3xl bg-secondary text-secondary-foreground p-10 text-center">
           <h3 className="font-display font-black text-2xl sm:text-3xl">Are you in a country not listed?</h3>
           <p className="text-secondary-foreground/80 mt-2 max-w-xl mx-auto">Let us know — we want to put your nation on the SFM map.</p>
-          <a href="mailto:global@spiritfilled.org?subject=Add%20My%20Country%20to%20SFM%20Map" className="inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform">Add My Country</a>
+          <a href="mailto:info@spiritfilledministry.org?subject=Add%20My%20Country%20to%20SFM%20Map" className="inline-block mt-6 bg-gradient-flame text-primary-foreground px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform">Add My Country</a>
         </div>
       </section>
     </Layout>

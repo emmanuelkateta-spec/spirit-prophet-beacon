@@ -118,7 +118,7 @@ export default function Gallery() {
           />
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <a
-              href="mailto:overnight@spiritfilled.org?subject=SFM%20Overnight%20Registration&body=Name%3A%0APhone%3A%0ACity%2FCountry%3A%0AAttending%20with%20how%20many%20guests%3A%0APrayer%20Request%3A"
+              href="mailto:info@spiritfilledministry.org?subject=SFM%20Overnight%20Registration&body=Name%3A%0APhone%3A%0ACity%2FCountry%3A%0AAttending%20with%20how%20many%20guests%3A%0APrayer%20Request%3A"
               className="inline-flex items-center gap-2 bg-gradient-flame text-primary-foreground px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm shadow-flame hover:scale-105 transition-transform"
             >
               <Flame className="w-4 h-4" /> Register for the Upcoming All-Night
