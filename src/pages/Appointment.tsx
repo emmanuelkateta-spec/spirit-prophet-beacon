@@ -68,6 +68,7 @@ export default function Appointment() {
                 <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-primary" /> Spirit Filled Ministry HQ</li>
                 <li className="flex items-center gap-3"><Phone className="w-4 h-4 text-primary" /> +260 976 747 922</li>
                 <li className="flex items-center gap-3"><Mail className="w-4 h-4 text-primary" /> info@spiritfilledministry.org</li>
+                <li className="flex items-center gap-3 break-all"><Mail className="w-4 h-4 text-primary shrink-0" /> Spiritfilledministrychurch@gmail.com</li>
               </ul>
             </div>
           </div>
