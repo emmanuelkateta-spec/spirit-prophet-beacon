@@ -9,6 +9,7 @@ const nav = [
   { to: "/ministries", label: "Ministries" },
   { to: "/sermons", label: "Sermons" },
   { to: "/gallery", label: "Gallery & Archives" },
+  { to: "/upcoming-programs", label: "Upcoming Events" },
   { to: "/connect", label: "Give & Connect" },
 ];
 
