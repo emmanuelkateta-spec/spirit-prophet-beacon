@@ -24,6 +24,22 @@ import Auth from "./pages/Auth.tsx";
 import Admin from "./pages/Admin.tsx";
 import UpcomingPrograms from "./pages/UpcomingPrograms.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import TabletLogin from "./pages/tablet/TabletLogin.tsx";
+import TabletAuthGuard from "./pages/tablet/TabletAuthGuard.tsx";
+import TabletDashboard from "./pages/tablet/TabletDashboard.tsx";
+import TabletChats from "./pages/tablet/TabletChats.tsx";
+import TabletEvents from "./pages/tablet/TabletEvents.tsx";
+import TabletPartners from "./pages/tablet/TabletPartners.tsx";
+import TabletLive from "./pages/tablet/TabletLive.tsx";
+import TabletManagement from "./pages/tablet/TabletManagement.tsx";
+import TabletProtocols from "./pages/tablet/TabletProtocols.tsx";
+import TabletUshers from "./pages/tablet/TabletUshers.tsx";
+import TabletMedia from "./pages/tablet/TabletMedia.tsx";
+import TabletFamily from "./pages/tablet/TabletFamily.tsx";
+import Tablet12for12 from "./pages/tablet/Tablet12for12.tsx";
+import TabletLeaderboard from "./pages/tablet/TabletLeaderboard.tsx";
+import TabletEnquiries from "./pages/tablet/TabletEnquiries.tsx";
+import TabletSettings from "./pages/tablet/TabletSettings.tsx";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +70,22 @@ const App = () => (
           <Route path="/upcoming-programs" element={<UpcomingPrograms />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
+          {/* SFM Tablet Portal */}
+          <Route path="/tablet/login" element={<TabletLogin />} />
+          <Route path="/tablet" element={<TabletAuthGuard><TabletDashboard /></TabletAuthGuard>} />
+          <Route path="/tablet/chats" element={<TabletAuthGuard><TabletChats /></TabletAuthGuard>} />
+          <Route path="/tablet/events" element={<TabletAuthGuard><TabletEvents /></TabletAuthGuard>} />
+          <Route path="/tablet/partners" element={<TabletAuthGuard><TabletPartners /></TabletAuthGuard>} />
+          <Route path="/tablet/live" element={<TabletAuthGuard><TabletLive /></TabletAuthGuard>} />
+          <Route path="/tablet/management" element={<TabletAuthGuard><TabletManagement /></TabletAuthGuard>} />
+          <Route path="/tablet/protocols" element={<TabletAuthGuard><TabletProtocols /></TabletAuthGuard>} />
+          <Route path="/tablet/ushers" element={<TabletAuthGuard><TabletUshers /></TabletAuthGuard>} />
+          <Route path="/tablet/media" element={<TabletAuthGuard><TabletMedia /></TabletAuthGuard>} />
+          <Route path="/tablet/family" element={<TabletAuthGuard><TabletFamily /></TabletAuthGuard>} />
+          <Route path="/tablet/12for12" element={<TabletAuthGuard><Tablet12for12 /></TabletAuthGuard>} />
+          <Route path="/tablet/leaderboard" element={<TabletAuthGuard><TabletLeaderboard /></TabletAuthGuard>} />
+          <Route path="/tablet/enquiries" element={<TabletAuthGuard><TabletEnquiries /></TabletAuthGuard>} />
+          <Route path="/tablet/settings" element={<TabletAuthGuard><TabletSettings /></TabletAuthGuard>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
