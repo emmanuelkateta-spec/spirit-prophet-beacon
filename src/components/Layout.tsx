@@ -205,6 +205,13 @@ export default function Layout({ children }: { children: ReactNode }) {
             <p className="text-sm text-secondary-foreground/70 leading-relaxed">
               A Holy Ghost movement raising sons & daughters of fire under Premier Prophet Epas.
             </p>
+            <div className="mt-6">
+              <h4 className="font-display font-bold text-accent text-sm mb-2">SFM Platforms</h4>
+              <Link to="/tablet" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/20 hover:bg-primary/30 text-primary text-sm font-semibold transition-colors">
+                <Flame className="w-4 h-4" /> SFM Tablet (Member Portal)
+              </Link>
+              <p className="text-xs text-secondary-foreground/50 mt-1">tablet.spiritfilledministry.org</p>
+            </div>
           </div>
           <div>
             <h4 className="font-display font-bold mb-4 text-accent">Explore</h4>
