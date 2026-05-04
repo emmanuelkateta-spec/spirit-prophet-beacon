@@ -163,6 +163,43 @@ function drawGuestCard(
   ctx.restore();
 }
 
+function WriteupReveal({ text }: { text: string }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const paragraphs = text.split("\n\n");
+
+  return (
+    <div ref={ref} className="bg-background/60 border border-border rounded-2xl p-5 sm:p-6 space-y-3">
+      <h4 className="font-display font-bold text-sm uppercase tracking-widest text-primary flex items-center gap-2">
+        <BookOpen className="w-4 h-4" /> Word from the Prophet
+      </h4>
+      {paragraphs.map((p, i) => (
+        <p
+          key={i}
+          className="text-sm text-muted-foreground leading-relaxed italic transition-all duration-700"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(20px)",
+            transitionDelay: `${i * 200}ms`,
+          }}
+        >
+          {p}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 function RegistrationForm({ event }: { event: EventInfo }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
