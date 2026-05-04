@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Users, Bell, MessageCircle, Plus } from "lucide-react";
 import TabletLayout from "./TabletLayout";
+import TabNotificationBar from "@/components/tablet/TabNotificationBar";
+import TabChatGroups from "@/components/tablet/TabChatGroups";
 
 export default function Tablet12for12() {
   const [groups, setGroups] = useState<any[]>([]);
@@ -51,6 +53,7 @@ export default function Tablet12for12() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl font-display font-black mb-6">12 for 12</h1>
         <p className="text-muted-foreground mb-4 text-sm">Small groups of up to 12 members for focused ministry growth.</p>
+        <TabNotificationBar tabName="12 for 12" />
 
         {!activeGroup ? (
           <div className="grid sm:grid-cols-2 gap-4">
@@ -104,6 +107,7 @@ export default function Tablet12for12() {
             </Tabs>
           </div>
         )}
+        <TabChatGroups tabName="12 for 12" />
       </div>
     </TabletLayout>
   );

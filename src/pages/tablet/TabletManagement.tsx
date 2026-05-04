@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Shield, FileText, Calendar, Clock, Plus } from "lucide-react";
 import TabletLayout from "./TabletLayout";
+import TabNotificationBar from "@/components/tablet/TabNotificationBar";
+import TabChatGroups from "@/components/tablet/TabChatGroups";
 
 export default function TabletManagement() {
   const [discussions, setDiscussions] = useState<any[]>([]);
@@ -60,6 +62,7 @@ export default function TabletManagement() {
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-display font-black">SFM Management</h1>
         </div>
+        <TabNotificationBar tabName="SFM Management" />
         <Tabs defaultValue="discussions">
           <TabsList className="mb-4">
             <TabsTrigger value="discussions">Discussions</TabsTrigger>
@@ -145,6 +148,7 @@ export default function TabletManagement() {
             </div>
           </TabsContent>
         </Tabs>
+        <TabChatGroups tabName="SFM Management" />
       </div>
     </TabletLayout>
   );

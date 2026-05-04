@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import TabletLayout from "./TabletLayout";
+import TabNotificationBar from "@/components/tablet/TabNotificationBar";
+import TabChatGroups from "@/components/tablet/TabChatGroups";
 
 export default function TabletEvents() {
   const [events, setEvents] = useState<any[]>([]);
@@ -17,6 +19,7 @@ export default function TabletEvents() {
     <TabletLayout>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl font-display font-black mb-6">SFM Events</h1>
+        <TabNotificationBar tabName="SFM Events" />
         {events.length === 0 ? (
           <div className="bg-background rounded-xl border border-border p-12 text-center text-muted-foreground">
             <Calendar className="w-12 h-12 mx-auto mb-3 opacity-30" />
@@ -42,6 +45,7 @@ export default function TabletEvents() {
             ))}
           </div>
         )}
+        <TabChatGroups tabName="SFM Events" />
       </div>
     </TabletLayout>
   );

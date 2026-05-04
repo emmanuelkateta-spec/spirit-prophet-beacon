@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Trophy, Medal, Award } from "lucide-react";
 import TabletLayout from "./TabletLayout";
+import TabNotificationBar from "@/components/tablet/TabNotificationBar";
+import TabChatGroups from "@/components/tablet/TabChatGroups";
 
 export default function TabletLeaderboard() {
   const [leaders, setLeaders] = useState<{ user_id: string; total: number; name: string }[]>([]);
@@ -32,6 +34,7 @@ export default function TabletLeaderboard() {
       <div className="max-w-2xl mx-auto">
         <h1 className="text-2xl font-display font-black mb-6">🏆 Leaderboard</h1>
         <p className="text-muted-foreground mb-6 text-sm">Top engaging participants in the ministry</p>
+        <TabNotificationBar tabName="Leaderboard" />
         <div className="bg-background rounded-xl border border-border overflow-hidden">
           {leaders.length === 0 ? (
             <div className="p-12 text-center text-muted-foreground">
@@ -51,6 +54,7 @@ export default function TabletLeaderboard() {
             </div>
           )}
         </div>
+        <TabChatGroups tabName="Leaderboard" />
       </div>
     </TabletLayout>
   );

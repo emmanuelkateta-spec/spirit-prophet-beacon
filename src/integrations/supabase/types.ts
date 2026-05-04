@@ -480,6 +480,106 @@ export type Database = {
         }
         Relationships: []
       }
+      tab_chat_group_members: {
+        Row: {
+          added_by: string | null
+          group_id: string
+          id: string
+          joined_at: string
+          user_id: string
+        }
+        Insert: {
+          added_by?: string | null
+          group_id: string
+          id?: string
+          joined_at?: string
+          user_id: string
+        }
+        Update: {
+          added_by?: string | null
+          group_id?: string
+          id?: string
+          joined_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tab_chat_group_members_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "tab_chat_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      tab_chat_groups: {
+        Row: {
+          conversation_id: string | null
+          created_at: string
+          created_by: string
+          description: string | null
+          id: string
+          max_members: number | null
+          name: string
+          tab_name: string
+        }
+        Insert: {
+          conversation_id?: string | null
+          created_at?: string
+          created_by: string
+          description?: string | null
+          id?: string
+          max_members?: number | null
+          name: string
+          tab_name: string
+        }
+        Update: {
+          conversation_id?: string | null
+          created_at?: string
+          created_by?: string
+          description?: string | null
+          id?: string
+          max_members?: number | null
+          name?: string
+          tab_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tab_chat_groups_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      tab_notifications: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          posted_by: string
+          tab_name: string
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          posted_by: string
+          tab_name: string
+          title: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          posted_by?: string
+          tab_name?: string
+          title?: string
+        }
+        Relationships: []
+      }
       tablet_enquiries: {
         Row: {
           created_at: string

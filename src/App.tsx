@@ -40,6 +40,7 @@ import Tablet12for12 from "./pages/tablet/Tablet12for12.tsx";
 import TabletLeaderboard from "./pages/tablet/TabletLeaderboard.tsx";
 import TabletEnquiries from "./pages/tablet/TabletEnquiries.tsx";
 import TabletSettings from "./pages/tablet/TabletSettings.tsx";
+import TabletAdmin from "./pages/tablet/TabletAdmin.tsx";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/tablet/leaderboard" element={<TabletAuthGuard><TabletLeaderboard /></TabletAuthGuard>} />
           <Route path="/tablet/enquiries" element={<TabletAuthGuard><TabletEnquiries /></TabletAuthGuard>} />
           <Route path="/tablet/settings" element={<TabletAuthGuard><TabletSettings /></TabletAuthGuard>} />
+          <Route path="/tablet/admin" element={<TabletAuthGuard><TabletAdmin /></TabletAuthGuard>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

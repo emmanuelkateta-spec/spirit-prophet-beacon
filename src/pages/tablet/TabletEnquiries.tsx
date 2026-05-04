@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MessageCircle, Send } from "lucide-react";
 import TabletLayout from "./TabletLayout";
+import TabNotificationBar from "@/components/tablet/TabNotificationBar";
+import TabChatGroups from "@/components/tablet/TabChatGroups";
 
 export default function TabletEnquiries() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -26,6 +28,7 @@ export default function TabletEnquiries() {
     <TabletLayout>
       <div className="max-w-2xl mx-auto">
         <h1 className="text-2xl font-display font-black mb-6">Enquiries</h1>
+        <TabNotificationBar tabName="Enquiries" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-8">
           <a href="tel:+260976747922" className="bg-background rounded-xl border p-4 text-center hover:shadow-elegant transition-all">
@@ -59,6 +62,7 @@ export default function TabletEnquiries() {
             <Button type="submit" disabled={loading} className="w-full bg-gradient-flame text-primary-foreground"><Send className="w-4 h-4 mr-2" /> {loading ? "Sending..." : "Send Enquiry"}</Button>
           </form>
         </div>
+        <TabChatGroups tabName="Enquiries" />
       </div>
     </TabletLayout>
   );
