@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, Home, MessageCircle, Calendar, Users, Shield, Video, BookOpen, UserCheck, Camera, Heart, Trophy, HelpCircle, LogOut, Settings, ChevronDown } from "lucide-react";
+import { Menu, X, Home, MessageCircle, Calendar, Users, Shield, Video, BookOpen, UserCheck, Camera, Heart, Trophy, HelpCircle, LogOut, Settings, ChevronDown, Lock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/sfm-logo.png";
@@ -19,6 +19,7 @@ const modules = [
   { to: "/tablet/12for12", label: "12 for 12", icon: Users },
   { to: "/tablet/leaderboard", label: "Leaderboard", icon: Trophy },
   { to: "/tablet/enquiries", label: "Enquiries", icon: HelpCircle },
+  { to: "/tablet/admin", label: "Admin Panel", icon: Lock },
 ];
 
 export default function TabletLayout({ children, userModules }: { children: ReactNode; userModules?: string[] }) {
