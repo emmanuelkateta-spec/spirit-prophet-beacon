@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send, Plus, Search, MessageCircle } from "lucide-react";
 import TabletLayout from "./TabletLayout";
+import TabNotificationBar from "@/components/tablet/TabNotificationBar";
 
 export default function TabletChats() {
   const [user, setUser] = useState<any>(null);
@@ -82,6 +83,7 @@ export default function TabletChats() {
     <TabletLayout>
       <div className="max-w-6xl mx-auto">
         <h1 className="text-2xl font-display font-black mb-4">SFM Chats</h1>
+        <TabNotificationBar tabName="SFM Chats" />
         <div className="bg-background rounded-xl border border-border overflow-hidden flex" style={{ height: "calc(100vh - 200px)" }}>
           {/* Conversation list */}
           <div className="w-72 border-r border-border flex flex-col shrink-0">
