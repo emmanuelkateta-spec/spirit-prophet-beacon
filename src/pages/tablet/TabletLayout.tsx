@@ -1,11 +1,11 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, Home, MessageCircle, Calendar, Users, Shield, Video, BookOpen, UserCheck, Camera, Heart, Trophy, HelpCircle, LogOut, Settings, ChevronDown, Lock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/sfm-logo.png";
 
-const modules = [
+const publicModules = [
   { to: "/tablet", label: "Dashboard", icon: Home },
   { to: "/tablet/chats", label: "SFM Chats", icon: MessageCircle },
   { to: "/tablet/events", label: "SFM Events", icon: Calendar },
@@ -19,14 +19,27 @@ const modules = [
   { to: "/tablet/12for12", label: "12 for 12", icon: Users },
   { to: "/tablet/leaderboard", label: "Leaderboard", icon: Trophy },
   { to: "/tablet/enquiries", label: "Enquiries", icon: HelpCircle },
-  { to: "/tablet/admin", label: "Admin Panel", icon: Lock },
 ];
+
+const adminModule = { to: "/tablet/admin", label: "Admin Panel", icon: Lock };
 
 export default function TabletLayout({ children, userModules }: { children: ReactNode; userModules?: string[] }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
+
+  useEffect(() => {
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.from("user_roles").select("role").eq("user_id", user.id).eq("role", "admin").maybeSingle();
+      setIsAdmin(!!data);
+    })();
+  }, []);
+
+  const modules = isAdmin ? [...publicModules, adminModule] : publicModules;
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
