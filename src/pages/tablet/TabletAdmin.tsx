@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Shield, UserPlus, Users, MessageCircle, Plus, Trash2, Eye } from "lucide-react";
+import { Shield, UserPlus, Users, MessageCircle, Plus, Trash2, Eye, Bell } from "lucide-react";
 import TabletLayout from "./TabletLayout";
 
 const TAB_NAMES = [
@@ -35,6 +35,10 @@ export default function TabletAdmin() {
   const [addMemberGroupId, setAddMemberGroupId] = useState("");
   const [addMemberUserId, setAddMemberUserId] = useState("");
   const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
+  const [notifTab, setNotifTab] = useState("");
+  const [notifTitle, setNotifTitle] = useState("");
+  const [notifMessage, setNotifMessage] = useState("");
+  const [notifications, setNotifications] = useState<any[]>([]);
 
   useEffect(() => {
     loadAll();
@@ -57,6 +61,8 @@ export default function TabletAdmin() {
     setRoles(r.data || []);
     setModules(m.data || []);
     setChatGroups(g.data || []);
+    const { data: notifs } = await supabase.from("tab_notifications").select("*").order("created_at", { ascending: false }).limit(20);
+    setNotifications(notifs || []);
     setLoading(false);
   };
 
@@ -127,6 +133,15 @@ export default function TabletAdmin() {
     loadGroupMembers(groupId);
   };
 
+  const postNotification = async () => {
+    if (!notifTab || !notifTitle || !notifMessage) return;
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return;
+    const { error } = await supabase.from("tab_notifications").insert({ tab_name: notifTab, title: notifTitle, message: notifMessage, posted_by: user.id });
+    if (error) toast({ title: "Error", description: error.message, variant: "destructive" });
+    else { toast({ title: "Notification posted!" }); setNotifTab(""); setNotifTitle(""); setNotifMessage(""); loadAll(); }
+  };
+
   const getProfileName = (userId: string) => {
     const p = profiles.find(pr => pr.user_id === userId);
     return p?.display_name || p?.phone || userId.slice(0, 8);
@@ -153,6 +168,7 @@ export default function TabletAdmin() {
             <TabsTrigger value="admins">Admins</TabsTrigger>
             <TabsTrigger value="modules">Module Access</TabsTrigger>
             <TabsTrigger value="groups">Chat Groups</TabsTrigger>
+            <TabsTrigger value="notifications">Notifications</TabsTrigger>
             <TabsTrigger value="members">All Members</TabsTrigger>
           </TabsList>
 
@@ -275,6 +291,38 @@ export default function TabletAdmin() {
                 </div>
               ))}
               {chatGroups.length === 0 && <p className="text-center text-muted-foreground py-4">No chat groups created</p>}
+            </div>
+          </TabsContent>
+
+          {/* NOTIFICATIONS TAB */}
+          <TabsContent value="notifications">
+            <div className="bg-background rounded-xl border p-5 mb-4">
+              <h3 className="font-bold mb-3 flex items-center gap-2"><Bell className="w-4 h-4" /> Post Notification</h3>
+              <div className="space-y-2">
+                <Select value={notifTab} onValueChange={setNotifTab}>
+                  <SelectTrigger><SelectValue placeholder="Select tab" /></SelectTrigger>
+                  <SelectContent>
+                    {TAB_NAMES.map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
+                  </SelectContent>
+                </Select>
+                <Input placeholder="Notification title" value={notifTitle} onChange={e => setNotifTitle(e.target.value)} />
+                <Input placeholder="Notification message" value={notifMessage} onChange={e => setNotifMessage(e.target.value)} />
+                <Button onClick={postNotification}><Bell className="w-4 h-4 mr-1" /> Post</Button>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-sm text-muted-foreground uppercase tracking-wider">Recent Notifications</h3>
+              {notifications.map(n => (
+                <div key={n.id} className="bg-background rounded-xl border p-4">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">{n.tab_name}</span>
+                    <span className="text-xs text-muted-foreground">{new Date(n.created_at).toLocaleDateString()}</span>
+                  </div>
+                  <div className="font-bold text-sm">{n.title}</div>
+                  <div className="text-xs text-muted-foreground">{n.message}</div>
+                </div>
+              ))}
+              {notifications.length === 0 && <p className="text-center text-muted-foreground py-4">No notifications posted</p>}
             </div>
           </TabsContent>
 
