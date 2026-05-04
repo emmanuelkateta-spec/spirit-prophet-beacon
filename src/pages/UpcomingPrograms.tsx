@@ -1,9 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
-import { Calendar, MapPin, Clock, Phone, Flame, Users, Download, CheckCircle } from "lucide-react";
+import { Calendar, MapPin, Clock, Phone, Flame, Users, Download, CheckCircle, BookOpen } from "lucide-react";
 import awakeningImg from "@/assets/event-awakening-night.jpg";
 import macImg from "@/assets/event-mac-2026.jpg";
+import twelveFastImg from "@/assets/event-twelve-fast.jpg";
 import logo from "@/assets/logo.jpg";
 
 type EventInfo = {
@@ -17,6 +18,7 @@ type EventInfo = {
   image: string;
   description: string;
   whatsappNumber: string;
+  writeup?: string;
 };
 
 const EVENTS: EventInfo[] = [
@@ -45,6 +47,20 @@ const EVENTS: EventInfo[] = [
     description:
       "A gathering strictly by registration for ministers, leaders and sons of the prophets. Receive impartation, strategy and fresh fire for your assignment.",
     whatsappNumber: "260976747922",
+  },
+  {
+    id: "twelve-fast",
+    title: "The Twelve Fast",
+    subtitle: "With Prophet Epas",
+    date: "1st – 12th June 2026",
+    time: "00:00 – 12:00 (Daily)",
+    venue: "Wherever You Are (Virtual & In-Person Groups)",
+    enquiry: ["+260776896441"],
+    image: twelveFastImg,
+    description:
+      "A powerful 12-day fasting assignment: 12 people, fasting from 12 AM to 12 PM, interceding for one member each day. 12 to 12, 12 for 12, 12 of 12.",
+    whatsappNumber: "260776896441",
+    writeup: `As I was in prayer, I received a clear instruction concerning the month of June. I was led to gather a group of 12 people to embark on a 12-day fast, running from the 1st of June to the 12th of June.\n\nEach day, we will fast from 12:00 AM to 12:00 PM, dedicating every day to intercede for one specific individual within the group. Over the course of the 12 days, each of the 12 people will be intentionally covered in prayer one day at a time.\n\nMeaning, 12 people fasting for 1 member each day.\n\nWhile praying, I initially felt concerned about others that may want to take part who may not be part of my group of 12. However, I received clarity that this instruction is not limited to one circle. Others are free and encouraged to form their own groups of 12 and follow the same pattern: 12 to 12, 12 for 12, 12 of 12.\n\nMy team will assist you on how to go about it and form the groups.\n\nThis message is being shared early to allow time for preparation and alignment. The vision is for many to participate. Even if you are not part of the initial 12 fasting with me, you can still be involved by joining or forming another group of 12 and taking part in this collective spiritual assignment.\n\n— Prophet Epas`,
   },
 ];
 
@@ -316,6 +332,9 @@ export default function UpcomingPrograms() {
                     {event.description}
                   </p>
                 </div>
+
+                {/* Animated writeup */}
+                {event.writeup && <WriteupReveal text={event.writeup} />}
 
                 {/* Info cards */}
                 <div className="grid grid-cols-2 gap-3">
