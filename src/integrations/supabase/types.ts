@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      appointments: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          preferred_date: string
+          preferred_time: string | null
+          purpose: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          preferred_date: string
+          preferred_time?: string | null
+          purpose?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          preferred_date?: string
+          preferred_time?: string | null
+          purpose?: string | null
+        }
+        Relationships: []
+      }
       bible_study_registrations: {
         Row: {
           created_at: string
@@ -121,6 +157,36 @@ export type Database = {
           id?: string
           points?: number
           user_id?: string
+        }
+        Relationships: []
+      }
+      event_registrations: {
+        Row: {
+          created_at: string
+          email: string | null
+          event_title: string
+          full_name: string
+          guests: number | null
+          id: string
+          phone: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          event_title: string
+          full_name: string
+          guests?: number | null
+          id?: string
+          phone: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          event_title?: string
+          full_name?: string
+          guests?: number | null
+          id?: string
+          phone?: string
         }
         Relationships: []
       }
@@ -667,6 +733,33 @@ export type Database = {
           id?: string
           module_name?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          category: string | null
+          created_at: string
+          id: string
+          location: string | null
+          name: string
+          testimony_text: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          id?: string
+          location?: string | null
+          name: string
+          testimony_text: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          id?: string
+          location?: string | null
+          name?: string
+          testimony_text?: string
         }
         Relationships: []
       }

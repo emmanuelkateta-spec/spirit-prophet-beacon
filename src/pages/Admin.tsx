@@ -10,7 +10,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Loader2, LogOut, Download, Users, HandHeart, Flame, BookOpen,
-  Shield, UserPlus, MessageCircle, Bell, Trash2, Eye, Plus, ChevronLeft
+  Shield, UserPlus, MessageCircle, Bell, Trash2, Eye, Plus, ChevronLeft,
+  CalendarCheck, Heart, ClipboardList, HelpCircle
 } from "lucide-react";
 import logo from "@/assets/sfm-logo.png";
 
@@ -27,6 +28,10 @@ const REG_TABS = [
   { key: "partners", label: "Partners", icon: HandHeart },
   { key: "soul_winners", label: "Soul Winners", icon: Flame },
   { key: "bible_study_registrations", label: "Bible Study", icon: BookOpen },
+  { key: "event_registrations", label: "Event Registrations", icon: ClipboardList },
+  { key: "appointments", label: "Appointments", icon: CalendarCheck },
+  { key: "testimonials", label: "Testimonials", icon: Heart },
+  { key: "tablet_enquiries", label: "Enquiries", icon: HelpCircle },
 ] as const;
 
 function toCSV(rows: Row[]): string {
