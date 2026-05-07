@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Layout from "@/components/Layout";
 import HeroBanner from "@/components/HeroBanner";
+import { supabase } from "@/integrations/supabase/client";
 import { Calendar, MapPin, Clock, Phone, Flame, Users, Download, CheckCircle, BookOpen } from "lucide-react";
 import awakeningImg from "@/assets/event-awakening-night.jpg";
 import macImg from "@/assets/event-mac-2026.jpg";
@@ -208,9 +209,18 @@ function RegistrationForm({ event }: { event: EventInfo }) {
   const [submitted, setSubmitted] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
+    try {
+      await supabase.from("event_registrations").insert({
+        full_name: name.trim(),
+        phone: phone.trim(),
+        email: email.trim() || null,
+        event_title: event.title,
+        guests: parseInt(guests) || 0,
+      });
+    } catch (_) {}
     setSubmitted(true);
   }
 

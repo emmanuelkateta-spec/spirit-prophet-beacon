@@ -3,6 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { CalendarCheck, Clock, MapPin, Phone, Mail } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const PURPOSES = [
   "Personal Prayer & Counsel",
@@ -24,12 +25,23 @@ export default function Appointment() {
     notes: "",
   });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.date) {
       toast.error("Please fill in your name, email and preferred date.");
       return;
     }
+    try {
+      await supabase.from("appointments").insert({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim() || null,
+        preferred_date: form.date,
+        preferred_time: form.time || null,
+        purpose: form.purpose,
+        notes: form.notes.trim() || null,
+      });
+    } catch (_) {}
     const subject = encodeURIComponent(`Appointment Request — ${form.purpose}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nPreferred Date: ${form.date}\nPreferred Time: ${form.time}\nPurpose: ${form.purpose}\n\nNotes:\n${form.notes}`

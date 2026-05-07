@@ -3,6 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import { Quote, Heart, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const STORIES = [
   { name: "Sister Mwila", location: "Lusaka, Zambia", category: "Healing", text: "After years of chronic pain, I was prayed for during a Sunday service and felt fire move through my body. I have not had pain since. To God be the glory!" },
@@ -16,12 +17,20 @@ const STORIES = [
 export default function Testimonials() {
   const [form, setForm] = useState({ name: "", location: "", category: "Healing", text: "" });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.text) {
       toast.error("Please share your name and testimony.");
       return;
     }
+    try {
+      await supabase.from("testimonials").insert({
+        name: form.name.trim(),
+        location: form.location.trim() || null,
+        category: form.category,
+        testimony_text: form.text.trim(),
+      });
+    } catch (_) {}
     toast.success("Praise God! Your testimony has been received.");
     setForm({ name: "", location: "", category: "Healing", text: "" });
   };
